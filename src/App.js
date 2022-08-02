@@ -15,7 +15,7 @@ import DarkMeowFi from './components/works/DarkMeowFi';
 import DarkMeowShop from './components/works/DarkMeowShop';
 import ECommerce from './components/works/ECommerce';
 import MatiasSanes from './components/works/MatiasSanes';
-import ThreejsPortfolio from './components/works/ThreejsPortfolio';
+import ThreejsPortfolio from './components/works/ThreejsPortfolio'; 
 
 const App = ({ Component, pageProps, router }) => {
   return (
