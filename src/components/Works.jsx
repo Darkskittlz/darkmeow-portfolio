@@ -23,7 +23,7 @@ const GridContainer = styled.div`
 
 export const FooterContainer = styled.div`
     display: flex;
-    width: 100%;
+    width: 100%; 
 `
 
 
