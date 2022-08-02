@@ -55,7 +55,7 @@ const Works = props => {
                                     height="205px"
                                     width="440px"
                                 />
-                                <LinkOverlay href={`works/Backgrounds`}>
+                                <LinkOverlay href={`https://darkdev-portfolio.netlify.app/works/Backgrounds`}>
                                     <Text 
                                         style={{
                                             color: "var(--text-color)",
@@ -77,7 +77,7 @@ const Works = props => {
                                     height="205px"
                                     width="440px"
                                 />
-                                <LinkOverlay href={`works/Bandingo`}>
+                                <LinkOverlay href={`https://darkdev-portfolio.netlify.app/works/Bandingo`}>
                                     <Text 
                                         style={{
                                             color: "var(--text-color)",
@@ -99,7 +99,7 @@ const Works = props => {
                                     height="205px"
                                     width="440px"
                                 />
-                                <LinkOverlay href={`works/Collab`}>
+                                <LinkOverlay href={`https://darkdev-portfolio.netlify.app/works/Collab`}>
                                     <Text 
                                         style={{
                                             color: "var(--text-color)",
@@ -121,7 +121,7 @@ const Works = props => {
                                     height="205px"
                                     width="440px"
                                 />
-                                <LinkOverlay href={`works/DarkMeowFi`}>
+                                <LinkOverlay href={`https://darkdev-portfolio.netlify.app/works/DarkMeowFi`}>
                                     <Text 
                                         style={{
                                             color: "var(--text-color)",
@@ -143,7 +143,7 @@ const Works = props => {
                                     height="205px"
                                     width="440px"
                                 />
-                                <LinkOverlay href={`works/ECommerce`}>
+                                <LinkOverlay href={`https://darkdev-portfolio.netlify.app/works/ECommerce`}>
                                     <Text 
                                         style={{
                                             color: "var(--text-color)",
@@ -165,7 +165,7 @@ const Works = props => {
                                     height="205px"
                                     width="440px"
                                 />
-                                <LinkOverlay href={`works/APMusic`}>
+                                <LinkOverlay href={`https://darkdev-portfolio.netlify.app/works/APMusic`}>
                                     <Text 
                                         style={{
                                             color: "var(--text-color)",
@@ -187,7 +187,7 @@ const Works = props => {
                                     height="205px"
                                     width="440px"
                                 />
-                                <LinkOverlay href={`works/ThreejsPortfolio`}>
+                                <LinkOverlay href={`https://darkdev-portfolio.netlify.app/works/ThreejsPortfolio`}>
                                     <Text 
                                         style={{
                                             color: "var(--text-color)",
@@ -209,7 +209,7 @@ const Works = props => {
                                     height="205px"
                                     width="440px"
                                 />
-                                <LinkOverlay href={`works/MatiasSanes`}>
+                                <LinkOverlay href={`https://darkdev-portfolio.netlify.app/works/MatiasSanes`}>
                                     <Text 
                                         style={{
                                             color: "var(--text-color)",

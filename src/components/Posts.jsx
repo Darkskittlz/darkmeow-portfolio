@@ -55,7 +55,7 @@ const Posts = props => {
                                 width="440px"
                                 style={{borderRadius: "10px"}}
                             />
-                            <LinkOverlay href={`posts/blog1`}>
+                            <LinkOverlay href={`https://darkdev-portfolio.netlify.app/posts/blog1`}>
                                 <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>From E-Boy To Engineer</Text>
                             </LinkOverlay>
                         </LinkBox>
