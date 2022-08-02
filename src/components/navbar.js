@@ -60,7 +60,7 @@ const Navbar = props => {
                     mt={{ base: 4, nmd: 0 }}
                 >
                     <Link 
-                        href="https://darkdev-portfolio.netlify.app/works"
+                        href="/works"
                         path={path}
                         style={{
                             marginRight: "10px",
@@ -70,7 +70,7 @@ const Navbar = props => {
                         Work 
                     </Link>
                     <Link 
-                        href="https://darkdev-portfolio.netlify.app/posts"
+                        href="/posts"
                         path={path}
                         style={{
                             marginRight: "10px",
@@ -119,10 +119,10 @@ const Navbar = props => {
                                 <Link color="var(--text-color)" href='/'>
                                     <MenuItem as={Link}>Home</MenuItem>
                                 </Link>
-                                <Link color="var(--text-color)" href='https://darkdev-portfolio.netlify.app/works'>
+                                <Link color="var(--text-color)" href='/works'>
                                     <MenuItem as={Link}>Work</MenuItem>
                                 </Link>
-                                <Link color="var(--text-color)" href='https://darkdev-portfolio.netlify.app/posts'>
+                                <Link color="var(--text-color)" href='/posts'>
                                     <MenuItem as={Link}>Posts</MenuItem>
                                 </Link>
                             </MenuList>

@@ -121,7 +121,7 @@ const Homepage = () => {
 						As a blockchain engineer, he enjoys connecting frontend web applications with the blockchain via Web3js. 
 					</h1>
 					<Box align="center" my={4}>
-						<Link href="https://darkdev-portfolio.netlify.app/works">
+						<Link href="/works">
 							<ButtonContainer>
 								My Portfolio
 							</ButtonContainer>
