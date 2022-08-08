@@ -5,6 +5,8 @@
 :root {
   --black: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
+
+
 }
 
 body {
@@ -33,12 +35,58 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   background: var(--text-color);
+
 }
 
 nav a {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--background-color);
+
+  @media screen (max-width: 960px) {
+    display: none;
+  }
 }
 
 
+.homePageContainer {
+  display: flex;
+  backdrop-filter: blur(20px);
+  border-radius: 10px; 
+  flex-direction: column;
+
+  @media screen (max-width: 960px) {
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+.navbarItems {
+  display: flex;
+
+  @media screen (max-width: 960px) {
+    display: none;
+  }
+}
+
+.LinkItems {
+  display: flex;
+
+  @media screen (max-width: 900px) {
+    display: none;
+  }
+}
+
+.Layout {
+  position: relative;
+  
+  @media screen (max-width: 960px) {
+    display: flex;
+    position: fixed;
+    margin-left: 100px;  
+  }
+}
+
+.NavContainer {
+  width: 100%;
+}

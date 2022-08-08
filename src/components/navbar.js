@@ -1,3 +1,8 @@
+import { HamburgerIcon } from '@chakra-ui/icons'
+import { IoLogoGithub } from 'react-icons/io5'
+import Logo from './logo'
+import DarkMode from "./DarkMode.js"
+import '../Styles/App.css';
 import {
     Container, 
     Box,
@@ -12,39 +17,33 @@ import {
     Link,
     useColorModeValue    
 } from '@chakra-ui/react'
-import { HamburgerIcon } from '@chakra-ui/icons'
-import { IoLogoGithub } from 'react-icons/io5'
-import Logo from './logo'
-import DarkMode from "./DarkMode.js"
+
 
 
 
 const Navbar = props => {
     const { path } = props
     return (
-        <Container maxW="2xl">
+        <Container className="NavContainer">
             <Box
                 position="relative"
                 as="nav"
                 w="80%"
                 ml="15%"
                 bg={useColorModeValue('#ffffff40', '#20202380')}
-                css={{ backdropFilter: 'blur(10px)', borderRadius: "10px", marginBottom: "10px"}}
+                css={{ 
+                    borderRadius: "10px", 
+                }}
                 wrap="wrap"
                 zIndex={2}
                 {...props}
             >
                 <Container  
                     display="flex" 
-                    p={2} 
-                    ml={2}
                     alignItems="center"
-                    w="100%"
-                    maxW="container.md" 
+                    w="100%" 
                     wrap="wrap" 
-                    justify="space-between"
                 >
-                
                 <Flex align="center" mr={5}>
                     <Heading as="h1" size="lg">
                         <Logo />
@@ -58,10 +57,12 @@ const Navbar = props => {
                     flexGrow={1}
                     spacing="25px"
                     mt={{ base: 4, nmd: 0 }}
+                    className="navbarItems"
                 >
                     <Link 
                         href="/works"
                         path={path}
+                        className="LinkItems"
                         style={{
                             marginRight: "10px",
                             textDecoration: "none",

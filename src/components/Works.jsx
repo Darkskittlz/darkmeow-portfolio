@@ -19,6 +19,10 @@ const GridContainer = styled.div`
     flex-direction: column;
     width: 50%;
     margin-left: 25%;
+
+    @media (max-width: 960px) {
+        width: 100%;
+    }
 `
 
 export const FooterContainer = styled.div`

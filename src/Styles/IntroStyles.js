@@ -19,12 +19,28 @@ export const Container2 = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    backdrop-filter: blur(30px);
-		box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
-    border: 0.5px solid var(--text-color);
+
 
     #spanText {
       color: var(--text-color);
+    }
+
+    @media (max-width: 960px) {
+      width: 50%;
+      display: flex;
+      backdrop-filter: blur(30px);
+      box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
+      border: 0.5px solid var(--text-color);
+      border-radius: 10px;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 20%;
+      padding-bottom: 58px;
+    }
+
+    h2 {
+      text-align: center;
+      padding-top: 10px;
     }
 
 `

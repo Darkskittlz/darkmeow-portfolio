@@ -5,11 +5,9 @@ import Section from '../components/section'
 import ParticleComponent from '../ParticleBackground2';
 import Footer from './footer';
 import Intro from './Intro';
-import Donut from './Donut';
 import Timeline from './TimeLine';
+import Donut from './Donut';
 import { Suspense } from 'react';
-
-
 import { 
 	Link,
 	Box,
@@ -23,12 +21,24 @@ const GridContainer = styled.div`
     width: 50%;
     margin-left: 25%;
 	padding-left: 25px;
+
+	// @media (max-width: 960px) {
+	// 	width: 80%;
+	//   }
 `
 
 
 const FooterContainer = styled.div`
     display: flex;
     width: 100%;
+
+	@media (max-width: 667px) {
+		margin-left: 10%;
+	}
+
+	@media (max-width: 960px) {
+		margin-left: 20%;
+	}
 `
 
 const Animation = keyframes`
@@ -68,6 +78,17 @@ const ButtonContainer = styled.div`
 	background: rgb(14,252,43);
 	background: linear-gradient(34deg, rgba(14,252,43,0.4013664983933972) 15%, rgba(9,222,238,0.29767441860465116) 48%, rgba(156,47,191,0.29767441860465116) 83%);
 
+	@media (max-width: 960px) {
+		width: 100px;
+	}
+
+	h1 {
+		@media (max-width: 960px) {
+			font-size: 25px;
+			padding: 0px;
+		}
+	}
+
 `
 
 const Homepage = () => {	
@@ -82,13 +103,7 @@ const Homepage = () => {
 			</Suspense> */}
 
 			<Container 
-				style={{
-					backdropFilter: "blur(20px)",
-					borderRadius: "10px", 
-					paddingLeft: "20px",
-					paddingRight: "20px"
-				}}
-				maxW='2xl'
+				className="homePageContainer"
 			>
 				<Box 
 				display={{md: 'flex'}}
@@ -117,13 +132,13 @@ const Homepage = () => {
 					</HeadingContainer>
 
 					<h1>
-						Tristan is a react developer who specializes in the MERN/PERN stack. He enjoys developing frontend user interfaces that prioritize sleek design, integrate background animations, and consume APIs to display interactive information. 
+						Jeremy is a react developer who specializes in the MERN/PERN stack. He enjoys developing frontend user interfaces that prioritize sleek design, integrate background animations, and consume APIs to display interactive information. 
 						As a blockchain engineer, he enjoys connecting frontend web applications with the blockchain via Web3js. 
 					</h1>
 					<Box align="center" my={4}>
 						<Link href="/works">
 							<ButtonContainer>
-								My Portfolio
+								<h1>My Portfolio</h1>
 							</ButtonContainer>
 						</Link>
 					</Box>

@@ -1,7 +1,6 @@
 import Navbar from '../navbar'
 import { Box, Container } from '@chakra-ui/react';
 import Donut from '../donut'
-import ParticleComponent from '../../ParticleBackground2';
 
 
 const Main = ({ children, router }) => {

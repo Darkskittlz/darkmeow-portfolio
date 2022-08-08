@@ -13,6 +13,10 @@ export const FooterWrapper = styled.section`
   box-sizing: content-box;
   z-index: 1;
   width: 100%;
+
+  @media only screen and (max-width: 960px) {
+	width: 20%;
+  }
 `
 
 export const SocialIconsContainer = styled.div`
@@ -25,7 +29,8 @@ z-index: 1;
 border-radius: 10px;
 
 @media only screen and (max-width: 900px) {
-	margin-left: 0%;
+	margin-left: -105px;
+	width: 500%;
 }
 `
 

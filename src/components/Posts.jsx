@@ -7,7 +7,6 @@ import {
     SimpleGrid,
     LinkOverlay, 
     Container, 
-
     Text, 
     LinkBox,
     Image

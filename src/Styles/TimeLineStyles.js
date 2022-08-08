@@ -47,7 +47,6 @@ export const CarouselMobileScrollNode = styled.div`
 export const CarouselItem = styled.div`
   border-radius: 3px;
   max-width: 196px;
-  
   }
 `
 
