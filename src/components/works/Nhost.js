@@ -6,6 +6,7 @@ import ParticleComponent from '../../ParticleBackground3'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import "../../Styles/App.css"
 
+import js from "../../assets/SkillBadges/js.svg";
 
 const GridContainer = styled.div`
     width: 50%;
@@ -30,7 +31,6 @@ const BodyContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-items: center;
-    margin-bottom: 200px;
     h1 {
         font-size: 23px;
         text-indent: 30px;
@@ -72,9 +72,10 @@ const ImageContainer = styled.div`
     animation-iteration-count: infinite;
 `
 
-const MatiasSanes = props => {
+const Backgrounds = props => {
     return (
         <>
+          <ParticleComponent />
             <Layout>
                 <Container maxW='2x1'>
                     <GridContainer>
@@ -83,59 +84,60 @@ const MatiasSanes = props => {
                             gap={10}
                             style={{
                                 marginTop: "10px", 
+                                height: "56vh",
                                 justifyItems: "center",
                                 backdropFilter: "blur(25px)",
                                 padding: "20px",
                                 borderRadius: "10px"
                             }} 
                         >
-                                      <ParticleComponent />
-
                             <TitleContainer>
                             <ImageContainer>
                                 <Image
                                     fit="cover"
                                     mr={20}
-                                    src="/images/logos/react.svg"
+                                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--bCeQqSN0--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/4376/05c347c7-2392-4173-b11b-f3ec923bb7c0.png"
                                     style={{  
                                         boxShadow: "0 0 20px rgba(80, 78, 78, 0.9)", 
                                         borderRadius: "50px", 
                                         padding: "10px",
+                                        height: "150px"
                                     }}
                                 />
                             </ImageContainer>
-                                <h1><Badge colorScheme="blue">Matias Sanes Project</Badge></h1> 
+                                <h1>NHost <Badge colorScheme="blue"></Badge></h1> 
                             </TitleContainer>
                             <BodyContainer>
                                 <h1>
-                                    Ad cillum minim anim cillum in in proident ex ad. Voluptate proident duis incididunt officia dolore adipisicing. Id dolor laboris aute veniam ex velit fugiat nulla. Id ea sit deserunt incididunt proident in aliquip labore labore commodo et do mollit. Eu dolore laboris excepteur irure sunt nisi ullamco amet elit esse minim reprehenderit cupidatat adipisicing. Quis reprehenderit laborum incididunt consequat veniam consequat ipsum.
+                                    React application utilizing MUI and styled-components for styling, nhost for login functionality, and GraphQL 
+                                    for database management.
                                 </h1>
                                 <List ml={4} my={4} style={{display: "flex", flexDirection: "column"}}>
                                     <ListItem>
                                         <Badge2>Platform</Badge2>
-                                        <span>HTML, CSS, JS, Mailchimp </span>
+                                        <span>NHost, Apollo, React, MUI, SASS </span>
                                     </ListItem>
                                     <ListItem>
                                         <Badge2>Website</Badge2>
                                         <Link 
-                                            href="https://matias-sanes.netlify.app/"
+                                            href="https://nhost.netlify.app/"
                                             style={{
                                                 color: "#b900ff"
                                             }}
                                         >
-                                        https://matias-sanes.netlify.app/
+                                        https://nhost.netlify.app/
                                             <ExternalLinkIcon mx="2px" />
                                         </Link>
                                     </ListItem>
                                     <ListItem>
                                         <Badge2>Source</Badge2>
                                         <Link 
-                                            href="https://github.com/Darkskittlz/matiasSite"
+                                            href="https://github.com/Darkskittlz/Nhost-ReactApp"
                                             style={{
                                                 color: "#b900ff"
                                             }}
                                         >
-                                        https://github.com/Darkskittlz/matiasSite
+                                        https://github.com/Darkskittlz/Nhost-ReactApp
                                             <ExternalLinkIcon mx="2px" />
                                         </Link>
                                     </ListItem>
@@ -152,4 +154,4 @@ const MatiasSanes = props => {
     )
 }
 
-export default MatiasSanes;
+export default Backgrounds;

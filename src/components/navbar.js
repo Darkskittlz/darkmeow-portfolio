@@ -1,10 +1,12 @@
+import React, { useState } from "react";
 import { HamburgerIcon } from '@chakra-ui/icons'
-import { IoLogoGithub } from 'react-icons/io5'
 import Logo from './logo'
 import DarkMode from "./DarkMode.js"
 import '../Styles/App.css';
+import { Container, Container2, Div1, Div2, Div3, NavLink, SocialIcons, Span } from '../Styles/HeaderStyles';
+import { GlobalStyle } from '../Styles/GlobalStyles';
+import styled from 'styled-components';
 import {
-    Container, 
     Box,
     Stack,
     Heading, 
@@ -15,123 +17,126 @@ import {
     MenuButton,
     IconButton,
     Link,
-    useColorModeValue    
+    useColorModeValue,    
+    Image
 } from '@chakra-ui/react'
 
+import ResumeIcon from '../assets/images/document.png'
+import GithubIcon from '../assets/images/github.svg'
+import Resume from "../assets/resume/resume2.pdf"
+import {Modal} from "./Modal";
 
+
+const IconContainer = styled.div`
+background-size: 30px 30px;
+// margin-right: 10px;
+filter: grayscale(100%);
+border: none;
+border-radius: 50%;
+transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+    img {
+        height: 40px;
+        width: 35px;
+    }
+`
+
+const GridContainer = styled.div`
+    display: flex;
+    align-items: center;
+
+	@media (max-width: 960px) {
+		flex-direction: column;
+	}
+`
+
+
+const Grid1 = styled.div`
+    display: flex;
+`
+
+const Grid2 = styled.div`
+    display: flex;
+`
 
 
 const Navbar = props => {
+    const [showModal, setShowModal] = useState(false);
     const { path } = props
+
+    const openModal = () => {
+        setShowModal((prev) => !prev);
+      };
+
     return (
-        <Container className="NavContainer">
-            <Box
-                position="relative"
-                as="nav"
-                w="80%"
-                ml="15%"
-                bg={useColorModeValue('#ffffff40', '#20202380')}
-                css={{ 
-                    borderRadius: "10px", 
-                }}
-                wrap="wrap"
-                zIndex={2}
-                {...props}
-            >
-                <Container  
-                    display="flex" 
-                    alignItems="center"
-                    w="100%" 
-                    wrap="wrap" 
-                >
-                <Flex align="center" mr={5}>
-                    <Heading as="h1" size="lg">
-                        <Logo />
-                    </Heading>
-                </Flex>
-                <Stack
-                    direction={{base: 'column', md: 'column'}}
-                    display={{base: 'none', md: 'flex'}}
-                    width={{ base: 'full', md: 'auto'}}
-                    flexDirection="row"
-                    flexGrow={1}
-                    spacing="25px"
-                    mt={{ base: 4, nmd: 0 }}
-                    className="navbarItems"
-                >
-                    <Link 
-                        href="/works"
-                        path={path}
-                        className="LinkItems"
-                        style={{
-                            marginRight: "10px",
-                            textDecoration: "none",
-                            color: "black"
-                        }}>
-                        Work 
-                    </Link>
-                    <Link 
-                        href="/posts"
-                        path={path}
-                        style={{
-                            marginRight: "10px",
-                            textDecoration: "none",
-                            color: "black"
-                        }}>
-                        Posts 
-                    </Link>
-                    <Link 
-                        target="_blank"
-                        href="https://github.com/darkskittlz"
-                        path={path}
-                        display="inline-flex"
-                        alignItems="center"
-                        style={{ 
-                            gap: 4,
-                            textDecoration: "none",
-                            color: "black"
-                        }}
-                        pl={2}
-                    >
-                        <IoLogoGithub />
-                        Source
-                    </Link>
-                </Stack> 
-                <Box 
-                    flex={2}
-                    align="center"
-                    display="flex"
-                    flexDirection="row-reverse"
-                >
-                    <DarkMode />
-                    <Box>
-                        <Menu>
-                            <MenuButton 
-                                as={IconButton} 
-                                icon={<HamburgerIcon />} 
-                                height="42px"
-                                width="42px"
-                                variant="outline" 
-                                aria-label="Options"
-                                cursor="pointer"
-                                marginRight="10px"
-                            />
-                            <MenuList style={{color: "var(--background-color)"}}>
-                                <Link color="var(--text-color)" href='/'>
-                                    <MenuItem as={Link}>Home</MenuItem>
+        <Container style={{width: "100%", justifyItems: "center"}}>
+            <GridContainer>
+                <Grid1>
+                    <Container2>
+                        <Box
+                            bg="none"
+                            position="relative"
+                            as="nav"
+                            w="50%"
+                            h="80px"
+                            wrap="wrap"
+                            zIndex={2}
+                            {...props}
+                        >
+                            <Div1>
+                                <Link href="/">
+                                    <Heading as="h1" fontSize={"59px"} size="lg">
+                                        <Logo />
+                                    </Heading>
                                 </Link>
-                                <Link color="var(--text-color)" href='/works'>
-                                    <MenuItem as={Link}>Work</MenuItem>
-                                </Link>
-                                <Link color="var(--text-color)" href='/posts'>
-                                    <MenuItem as={Link}>Posts</MenuItem>
-                                </Link>
-                            </MenuList>
-                        </Menu>
-                    </Box>
-                </Box>
-            </Container>
-          </Box>
+                            </Div1>
+                        </Box>
+                    </Container2>
+                </Grid1>
+
+                <Grid2>
+                    <Div3>
+                        <SocialIcons href="https://github.com/Darkskittlz" target='_blank'>
+                            <IconContainer>
+                                <img src={GithubIcon} />
+                            </IconContainer>
+                        </SocialIcons>
+
+                        <SocialIcons>
+                            <IconContainer>
+                                <img src={ResumeIcon}/>
+                                {/* <Modal showModal={showModal} setShowModal={setShowModal} />
+                                <GlobalStyle /> */}
+                            </IconContainer>
+                        </SocialIcons>
+                        <DarkMode />
+                        <Box>
+                            <Menu>
+                                <MenuButton 
+                                    as={IconButton} 
+                                    icon={<HamburgerIcon />} 
+                                    height="42px"
+                                    width="42px"
+                                    variant="outline" 
+                                    aria-label="Options"
+                                    cursor="pointer"
+                                />
+                                <MenuList style={{color: "var(--background-color)"}}>
+                                    <Link color="var(--text-color)" href='/'>
+                                        <MenuItem as={Link}>Home</MenuItem>
+                                    </Link>
+                                    <Link color="var(--text-color)" href='/works'>
+                                        <MenuItem as={Link}>Work</MenuItem>
+                                    </Link>
+                                    <Link color="var(--text-color)" href='/posts'>
+                                        <MenuItem as={Link}>Posts</MenuItem>
+                                    </Link>
+                                </MenuList>
+                            </Menu>
+                        </Box>
+                    </Div3>
+                </Grid2>
+            </GridContainer>
         </Container>
     )
 }

@@ -16,6 +16,9 @@ import DarkMeowShop from './components/works/DarkMeowShop';
 import ECommerce from './components/works/ECommerce';
 import MatiasSanes from './components/works/MatiasSanes';
 import ThreejsPortfolio from './components/works/ThreejsPortfolio'; 
+import Nhost from './components/works/Nhost'; 
+import SPAPortfolio from './components/works/SPAPortfolio'; 
+import BlogPost2 from './components/posts/Blog2';
 
 const App = ({ Component, pageProps, router }) => {
   return (
@@ -36,8 +39,11 @@ const App = ({ Component, pageProps, router }) => {
                             <Route path='/Works/ECommerce' element={<ECommerce />} />                            
                             <Route path='/Works/MatiasSanes' element={<MatiasSanes />} />                            
                             <Route path='/Works/ThreejsPortfolio' element={<ThreejsPortfolio />} />                            
+                            <Route path='/Works/Nhost' element={<Nhost />} />                            
+                            <Route path='/Works/SPAPortfolio' element={<SPAPortfolio />} />                            
                             <Route path='/Posts' element={<Posts />} />                            
                             <Route path='/Posts/Blog1' element={<BlogPost />} />                            
+                            <Route path='/Posts/Blog2' element={<BlogPost2 />} />                            
                       </Routes>                       
                   </div>
               </Layout>

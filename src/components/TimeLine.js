@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode, SectionContainer, SectionContainer2 } from '../Styles/TimeLineStyles';
 import { TimeLineData } from '../constants/constants';
 import Section from './section';
+import { SectionDivider } from '../Styles/GlobalStyles';
 
 
 
@@ -52,6 +53,8 @@ const Timeline = () => {
       <SectionContainer2>
         <h2>Milestones</h2>
       </SectionContainer2>
+        <SectionDivider />
+      <br />
       <SectionContainer>
         <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
           <>

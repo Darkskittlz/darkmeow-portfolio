@@ -2,19 +2,16 @@
 import styled from 'styled-components'
 
 export const SectionContainer2 = styled.div`
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
-  border: 1px solid var(--text-color);
+  border-radius: 8px;
   opacity: 1;
   color: var(--text-color);
   width: max-content;
-  padding: 0px 20px 0px 20px;
 
   h1 {
     font-size: 40px;
   }
   h2 {
-    font-size: 25px;
+    font-size: 40px;
   }
 `
 
@@ -28,7 +25,6 @@ export const SectionContainer = styled.div`
 export const TitleContent = styled.div`
   z-index: 20;
   width: 100%;
-
 `;
 
 export const CarouselContainer = styled.ul`

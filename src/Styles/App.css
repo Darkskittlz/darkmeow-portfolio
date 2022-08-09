@@ -52,10 +52,12 @@ nav a {
 .homePageContainer {
   display: flex;
   backdrop-filter: blur(20px);
+  justify-content: center;
   border-radius: 10px; 
   flex-direction: column;
+  width: 100%;
 
-  @media screen (max-width: 960px) {
+	@media (max-width: 960px) {
     flex-direction: column;
     display: flex;
   }
@@ -82,11 +84,21 @@ nav a {
   
   @media screen (max-width: 960px) {
     display: flex;
-    position: fixed;
-    margin-left: 100px;  
+    position: relative;
+    margin-left: 0px;  
   }
 }
 
 .NavContainer {
   width: 100%;
+}
+
+.projectThumbnail {
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  object-fit: cover;
+  height: 250px;
+  width: 410px;
+  flex-wrap: wrap;
 }

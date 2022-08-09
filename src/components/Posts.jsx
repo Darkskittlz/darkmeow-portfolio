@@ -9,62 +9,83 @@ import {
     Container, 
     Text, 
     LinkBox,
-    Image
+    Image,
+    Heading
 } from '@chakra-ui/react'
 import Footer from './footer';
+import { SectionDivider } from '../Styles/GlobalStyles';
 
 
-const GridContainer = styled.div`
-    height: 100vw;
-    width: 50%;
-    margin-left: 25%;
-`
 
 const FooterContainer = styled.div`
     display: flex;
     width: 100%;
 `
 
+const GridContainer = styled.div`
+    display: grid;
+    justify-content: center;
+    margin-top: 10px;
+`
+
+const Gap = styled.div`
+    padding: 5px;
+`
 
 const Posts = props => {
     return (
         <Layout>
             <ParticleComponent />
-			<Container maxW='2xl'>
-              <GridContainer>
-                <SimpleGrid 
-                    columns={[1, 1, 2]} 
-                    gap={10}
-                    style={{
-                        marginTop: "10px", 
-                        justifyItems: "center",
-                        backdropFilter: "blur(25px)",
-                        padding: "20px",
-                        borderRadius: "10px"
-                    }} 
-                >
-                    
-                    <Section delay={0.2}>
-                        <LinkBox cursor='pointer'>
-                            <Image
-						        fit="cover"
-						        src="/images/postThumb.jpg"
-						        alt="Backgrounds Project"	
-                                height="505px"
-                                width="440px"
-                                style={{borderRadius: "10px"}}
-                            />
-                            <LinkOverlay href={`posts/blog1`}>
-                                <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>From E-Boy To Engineer</Text>
-                            </LinkOverlay>
-                        </LinkBox>
-                    </Section>
-                </SimpleGrid>
+                <GridContainer>
+                        <Heading as="h2" size="lg" fontSize="80px" mb={14}>
+                            Blog 
+                            <SectionDivider />
+                        </Heading>
+                    <Container style={{display:"flex", flexWrap: "wrap"}} maxWidth="sm">
+                        <Section delay={0.2}>
+                            <LinkBox cursor='pointer'>
+                                <Image 
+                                    display="inline-block"
+                                    width="335px"
+                                    height="500px"
+                                    fit="cover"
+                                    src="/images/proPic2.jpg"
+                                    alt="Profile IMG"
+                                    style={{borderRadius: "10px"}}							   
+                                />
+                                <LinkOverlay href={`posts/blog2`}>
+                                    <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>GraphQL </Text>
+                                </LinkOverlay>
+                            </LinkBox>
+                        </Section>
+
+                        <Gap>
+
+                        </Gap>
+
+                        <Section delay={0.3}>
+                            <LinkBox cursor='pointer'>
+                                <Image
+                                    fit="cover"
+                                    src="/images/postThumb.jpg"
+                                    alt="Backgrounds Project"	
+                                    height="505px"
+                                    width="440px"
+                                    style={{borderRadius: "10px"}}
+                                />
+                                <LinkOverlay href={`posts/blog1`}>
+                                    <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>From E-Boy To Engineer</Text>
+                                </LinkOverlay>
+                            </LinkBox>
+                        </Section>
+                    </Container>
+                </GridContainer>
+
                 <FooterContainer>
                     <Footer />
                 </FooterContainer>
-            </GridContainer>
-          </Container>
+
+
         </Layout>
     );
 };

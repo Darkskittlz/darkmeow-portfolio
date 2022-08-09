@@ -15,16 +15,15 @@ import {
     Image,
 	Container, 
 } from '@chakra-ui/react'
+import Technologies from './Technologies';
+import { SectionDivider } from '../Styles/GlobalStyles';
+
 
 const GridContainer = styled.div`
     height: 100%;
     width: 50%;
     margin-left: 25%;
 	padding-left: 25px;
-
-	// @media (max-width: 960px) {
-	// 	width: 80%;
-	//   }
 `
 
 
@@ -53,22 +52,22 @@ const HeadingContainer = styled.div`
 	display: flex;
 	justify-content: flex-start;
 	width: 100%;
+	flex-direction: column;
+	margin-bottom: 10px;
 	
 	h1 {
 		color: var(--text-color);
 		font-size: 50px;
-		padding: 10px;
 		border-radius: 10px;
-		box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
-		border: 1px solid var(--text-color);
 	}
 `
 
 const ButtonContainer = styled.div`
 	font-size: 34px;
-	width: 200px;
+	width: 300px;
 	border-radius: 10px;
 	margin-top: 40px;
+	margin-bottom: 40px;
 	padding: 40px;
 	text-decoration: inherit;
 	color: var(--text-color);
@@ -102,39 +101,19 @@ const Homepage = () => {
 				<Donut />
 			</Suspense> */}
 
-			<Container 
-				className="homePageContainer"
-			>
-				<Box 
-				display={{md: 'flex'}}
-				style={{flexDirection: "column", paddingTop: "30px"}}
-				>
-					<Box 
-					flexShrink={0} 
-					mt={{ base: 4, md: 0 }}
-					ml={{ md: 6 }}
-					align="center"
-					>
-						<Image 
-						display="inline-block"
-						width="205px"
-						height="300px"
-						fit="cover"
-						src="/images/proPic2.jpg"
-						alt="Profile IMG"
-						style={{borderRadius: "10px"}}							   
-						/>
-					</Box>
-				</Box> 
+			<Container className="homePageContainer" >
 				<Section delay={0.1}>
 					<HeadingContainer>
 						<h1>Bio</h1> 
+						<SectionDivider />
 					</HeadingContainer>
-
 					<h1>
 						Jeremy is a react developer who specializes in the MERN/PERN stack. He enjoys developing frontend user interfaces that prioritize sleek design, integrate background animations, and consume APIs to display interactive information. 
 						As a blockchain engineer, he enjoys connecting frontend web applications with the blockchain via Web3js. 
 					</h1>
+				</Section>
+
+				<Section delay={0.2}>	
 					<Box align="center" my={4}>
 						<Link href="/works">
 							<ButtonContainer>
@@ -144,34 +123,52 @@ const Homepage = () => {
 					</Box>
 				</Section>
 
-				<Section delay={0.2}>	
-					<Timeline />
-				</Section>
-
-
-
 				<Section delay={0.3}>
 					<Heading as="h3" variant="section-title">
 						I ❤ 
 					</Heading>
 					<h1>Programming, 
-					<Link href="https://www.youtube.com/watch?v=J_eNHNsUKPA"> Youtube, </Link>
+					<Link 
+						style={{color: "#00ccff", textDecoration: "none"}}
+						href="https://www.youtube.com/watch?v=J_eNHNsUKPA"
+					> Youtube, </Link>
 					3D Rendering, Drums, Guitar {' '}
-					<Link href="https://darkmeowfi.netlify.app/">Lofi, </Link>
-					Rock Climbing, Parkour, 
-					<Link href="https://beacons.ai/darkskittlz"> Cosplay, </Link>
+					<Link 
+						style={{color: "purple", textDecoration: "none"}}
+						href="https://darkmeowfi.netlify.app/"
+					>Lofi, </Link> Rock Climbing, Parkour, 
+					<Link 
+						style={{color: "crimson", textDecoration: "none"}}
+						href="https://beacons.ai/darkskittlz"
+					> Cosplay, </Link>
 					Skateboarding, 
 					</h1>
 				</Section>
 
+				<br />
+				
 				<Section delay={0.4}>
 					<Heading as="h3" variant="section-title">
 						Inspired By 
 					</Heading>
 					<h1>{' '}
-						<Link href="https://www.craftz.dog/">Takuyama Matsuyama </Link>
+						<Link 
+							href="https://www.craftz.dog/" 
+							style={{
+								textDecoration: "none", 
+								color: "green"
+							}}>Takuyama Matsuyama </Link>
 					</h1>
 				</Section>
+
+				<Section delay={0.5}>	
+					<Technologies />
+				</Section>
+
+				<Section delay={0.6}>	
+					<Timeline />
+				</Section>
+				
 			</Container>
 		</Layout>
 		<FooterContainer>
