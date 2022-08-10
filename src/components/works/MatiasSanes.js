@@ -11,6 +11,12 @@ const GridContainer = styled.div`
     width: 50%;
     height: 45vw;
     margin-left: 25%;
+
+    @media (max-width: 960px) {
+        width: 100%;
+        margin-left:0%;
+        justify-items: center;
+    }
 `
 
 const TitleContainer = styled.div`
@@ -30,7 +36,6 @@ const BodyContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-items: center;
-    margin-bottom: 200px;
     h1 {
         font-size: 23px;
         text-indent: 30px;
@@ -41,6 +46,11 @@ const BodyContainer = styled.div`
 const FooterContainer = styled.div`
     display: flex;
     width: 100%;
+
+    @media (max-width: 960px) {
+        margin-top: 190px;
+        margin-left: 60px;
+    }
 `
 
 const Animation = keyframes`

@@ -90,14 +90,12 @@ nav a {
   border-radius: 10px;
   justify-content: center;
   object-fit: cover;
-  height: 250px;
-  width: 410px;
+  height: 180px;
+  width: 210px;
   flex-wrap: wrap;
-
-  @media screen (max-width: 960px) {
-    width: 239px;
-  }
 }
+
+
 
 .PostsContainer {
   display: flex;

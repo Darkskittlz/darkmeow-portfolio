@@ -25,6 +25,12 @@ import BlogPost2 from './components/posts/Blog2';
 const NavContainer = styled.div`
     width: 100%;
     justify-content: center;
+
+    @media (max-width: 960px){
+        width: 50%;
+        margin-left: 15%;
+
+    }
 `
 
 

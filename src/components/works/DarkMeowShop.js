@@ -6,7 +6,14 @@ import ParticleComponent from '../../ParticleBackground3'
 
 const GridContainer = styled.div`
     width: 50%;
+    height: 45vw;
     margin-left: 25%;
+
+    @media (max-width: 960px) {
+        width: 100%;
+        margin-left:0%;
+        justify-items: center;
+    }
 `
 
 const TitleContainer = styled.div`
@@ -15,13 +22,11 @@ const TitleContainer = styled.div`
     align-items: center;
     width: 100%;
     
-
     h1 {
         font-size: 30px;
         font-weight: 700;
         color: #A501EB;
     }
-
 `
 
 const BodyContainer = styled.div`
@@ -29,17 +34,21 @@ const BodyContainer = styled.div`
     flex-direction: column;
     justify-items: center;
     h1 {
-        font-size: 28px;
+        font-size: 23px;
         text-indent: 30px;
         text-align: left;
     }
 `
 
-export const FooterContainer = styled.div`
+const FooterContainer = styled.div`
     display: flex;
     width: 100%;
-`
 
+    @media (max-width: 960px) {
+        margin-top: 190px;
+        margin-left: 60px;
+    }
+`
 
 const DarkMeowShop = props => {
     return (

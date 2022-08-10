@@ -33,7 +33,9 @@ const GridContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
 
     @media (max-width: 960px) {
-        width: 50%;
+        width: 90%;
+        margin-left: 5%;
+        display: flex;
     }
 `
 
@@ -85,14 +87,16 @@ const Works = props => {
                         <Box>
                             <Section delay={0.2}>
                                 <LinkBox cursor='pointer'>
-                                    <Image
-                                        fit="cover"
-                                        src={Breezeline}
-                                        alt="NHost Project"	
-                                        className="projectThumbnail"
-                                        placeholder="blur"
-                                        loading="lazy"
-                                    />
+                                    <Container className="projectContainer">
+                                        <Image
+                                            fit="cover"
+                                            src={Breezeline}
+                                            alt="NHost Project"	
+                                            className="projectThumbnail"
+                                            placeholder="blur"
+                                            loading="lazy"
+                                        />
+                                    </Container>
                                     <LinkOverlay href={`works/Nhost`}>
                                         <Text 
                                             style={{
@@ -128,7 +132,7 @@ const Works = props => {
                                                 marginTop: "10px"
                                             }}
                                             fontSize={20}
-                                        >SPA Portfolio Project</Text>
+                                        >SPA Portfolio</Text>
                                     </LinkOverlay>
                                 </LinkBox>
                             </Section>                            

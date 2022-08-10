@@ -23,6 +23,7 @@ import {
 
 import ResumeIcon from '../assets/images/document.png'
 import GithubIcon from '../assets/images/github.svg'
+import MenuIcon from "../assets/images/menuIcon.svg"
 import Resume from "../assets/resume/resume2.pdf"
 import {Modal} from "./Modal";
 
@@ -39,6 +40,11 @@ transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
         height: 40px;
         width: 35px;
     }
+`
+
+const MenuIMG = styled.img`
+    width: 25px;
+    margin-top:2px;
 `
 
 const GridContainer = styled.div`
@@ -118,15 +124,21 @@ const Navbar = props => {
                         <Box>
                             <Menu>
                                 <MenuButton 
-                                    as={IconButton} 
-                                    icon={<HamburgerIcon />} 
+                                    // as={IconButton}
+                                    // icon={<HamburgerIcon />} 
+                                    // variant="outline" 
                                     height="42px"
                                     width="42px"
-                                    variant="outline" 
                                     aria-label="Options"
                                     cursor="pointer"
-                                />
-                                <MenuList style={{color: "var(--background-color)"}}>
+                                    style={{
+                                        borderRadius: "10px",
+                                        backgroundColor: "var(--text-color)"
+                                    }}
+                                >
+                                    <MenuIMG src={MenuIcon} />
+                                </MenuButton>
+                                <MenuList >
                                     <Link color="var(--text-color)" href='/'>
                                         <MenuItem as={Link}>Home</MenuItem>
                                     </Link>
