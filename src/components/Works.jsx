@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Section from './section'
 import Layout from './layouts/article'
 import styled from 'styled-components'
@@ -18,6 +19,7 @@ import {
 import SPA from "../assets/images/works/SPA.png"
 import Breezeline from "../assets/images/works/breezeline.png"
 import { SectionDivider } from '../Styles/GlobalStyles'
+import Totoro from './threeJS/Totoro'
 
 
 const GridContainer = styled.div`
@@ -40,6 +42,11 @@ export const FooterContainer = styled.div`
     width: 100%; 
     margin-top: 120px;
     height: 100px;
+
+    @media (max-width: 960px) {
+        margin-left: 50px;
+        padding-bottom: 120px;
+    }
 `
 
 const Grid2Container = styled.div`
@@ -52,7 +59,6 @@ const Grid2Container = styled.div`
     box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
 
     @media and (max-width: 960px) {
-        margin-left: 8%;
         grid-gap: 22px;
         padding: 0px;
         grid-gap: 0px;
@@ -66,6 +72,9 @@ const Works = props => {
         <GridContainer>
           <ParticleComponent />
             <Layout>
+            <Suspense fallback={null}>
+				<Totoro />
+			</Suspense>
               <Container className="homePageContainer">
                 <Heading as="h2" size="lg" fontSize="80px" mb={14}>
                     Works 

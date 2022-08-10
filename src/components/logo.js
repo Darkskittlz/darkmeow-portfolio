@@ -2,7 +2,8 @@ import styled from '@emotion/styled'
 import { 
     Image,
 	Text, 
-	useColorModeValue 
+	useColorModeValue,
+    Link 
 } from '@chakra-ui/react'
 
 const LogoBox = styled.span`
@@ -31,20 +32,20 @@ const Logo = () => {
     const footPrintImg = `/images/footprint${useColorModeValue('', '-dark')}.png`
 
     return (
-        <a href="/">
-            <LogoBox>
-                <Image 
-                    src={footPrintImg} 
-                    width={40} 
-                    height={40} 
-                    mb={15} 
-                    mr={10} 
-                    alt="logo"
-                    style={{
-                        borderRadius: "20px",
-                        padding: "5px",
-                    }}
-                />
+        <LogoBox>
+            <Image 
+                src={footPrintImg} 
+                width={40} 
+                height={40} 
+                mb={15} 
+                mr={10} 
+                alt="logo"
+                style={{
+                    borderRadius: "20px",
+                    padding: "5px",
+                }}
+            />
+            <Link color="var(--text-color)" href='/'>
                 <Text 
                     color={useColorModeValue('gray.800', 'whiteAlpha.900')}
                     fontFamily="M PLUS Rounded 1c"
@@ -57,10 +58,10 @@ const Logo = () => {
                         color: "var(--text-color)"
                     }}
                 >
-                    DarkMeow Productions
+                DarkMeow Productions
                 </Text>
-            </LogoBox>
-        </a>       
+            </Link>
+        </LogoBox>
     )
 }
 

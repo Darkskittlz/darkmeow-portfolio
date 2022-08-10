@@ -47,8 +47,8 @@ const SkillBadge = styled.img`
     width: 25%;
     margin-left: 8px;
     margin-bottom: 20px;
-    height: 140px;
-    width: 140px;
+    height: 100px;
+    width: 100px;
     animation-name: ${SkillBadgeAnimation};
     animation-duration: 4s;
     animation-iteration-count: infinite;
@@ -60,8 +60,7 @@ const SkillBadge = styled.img`
     }
 
     @media (max-width: 960px) {
-      width: 28%;
-      height: 55px;
+      height: 55%;
     }
 `
 

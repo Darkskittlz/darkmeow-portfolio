@@ -21,7 +21,7 @@ export const Container2 = styled.div`
     box-shadow: 0 0 10px rgba(0,204,255, 0.9);
     border-radius: 20px;
     backdrop-filter: blur(30px);
-
+    
 
     #spanText {
       color: var(--text-color);
@@ -49,7 +49,6 @@ export const Container2 = styled.div`
 
     @media (max-width: 960px) {
       width: 100%;
-      height: 16vh;
-      margin-left: -35px;
+      height: 22vh;
     }
 `

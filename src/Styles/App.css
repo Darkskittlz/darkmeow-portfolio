@@ -1,12 +1,6 @@
-.App {
-  text-align: center;
-}
-
 :root {
   --black: rgb(0, 0, 0);
   --white: rgb(255, 255, 255);
-
-
 }
 
 body {
@@ -49,6 +43,24 @@ nav a {
 }
 
 
+
+
+.navbarItems {
+  display: flex;
+  
+  @media screen (max-width: 960px) {
+    display: none;
+  }
+}
+
+.LinkItems {
+  display: flex;
+  
+  @media screen (max-width: 900px) {
+    display: none;
+  }
+}
+
 .homePageContainer {
   display: flex;
   backdrop-filter: blur(20px);
@@ -57,41 +69,21 @@ nav a {
   flex-direction: column;
   width: 100%;
 
-	@media (max-width: 960px) {
-    flex-direction: column;
-    display: flex;
-  }
-}
-
-.navbarItems {
-  display: flex;
-
   @media screen (max-width: 960px) {
-    display: none;
+    width: 95%;
   }
 }
 
-.LinkItems {
-  display: flex;
-
-  @media screen (max-width: 900px) {
-    display: none;
-  }
-}
 
 .Layout {
   position: relative;
+  width: 100%;
   
   @media screen (max-width: 960px) {
     display: flex;
-    position: relative;
-    margin-left: 0px;  
   }
 }
 
-.NavContainer {
-  width: 100%;
-}
 
 .projectThumbnail {
   display: flex;
@@ -101,4 +93,25 @@ nav a {
   height: 250px;
   width: 410px;
   flex-wrap: wrap;
+
+  @media screen (max-width: 960px) {
+    width: 239px;
+  }
+}
+
+.PostsContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen (max-width: 960px) {
+    flex-direction: column;
+  }
+}
+
+.IntroContainer {
+
+  @media screen (max-width: 900px) {
+    margin-left: 20%;
+    height: 200px;
+  }
 }

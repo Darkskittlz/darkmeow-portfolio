@@ -6,7 +6,6 @@ import ParticleComponent from '../ParticleBackground2';
 import Footer from './footer';
 import Intro from './Intro';
 import Timeline from './TimeLine';
-import Donut from './Donut';
 import { Suspense } from 'react';
 import { 
 	Link,
@@ -17,19 +16,24 @@ import {
 } from '@chakra-ui/react'
 import Technologies from './Technologies';
 import { SectionDivider } from '../Styles/GlobalStyles';
+import Totoro from './threeJS/Totoro';
 
 
 const GridContainer = styled.div`
     height: 100%;
     width: 50%;
-    margin-left: 25%;
-	padding-left: 25px;
+    margin-left: 26%;
+
+	@media (max-width: 960px) {
+		margin-left: 34px;
+		width: 90%;		
+	}
 `
 
 
 const FooterContainer = styled.div`
     display: flex;
-    width: 100%;
+    width: 90%;
 
 	@media (max-width: 667px) {
 		margin-left: 10%;
@@ -78,7 +82,7 @@ const ButtonContainer = styled.div`
 	background: linear-gradient(34deg, rgba(14,252,43,0.4013664983933972) 15%, rgba(9,222,238,0.29767441860465116) 48%, rgba(156,47,191,0.29767441860465116) 83%);
 
 	@media (max-width: 960px) {
-		width: 100px;
+		width: 250px;
 	}
 
 	h1 {
@@ -95,11 +99,11 @@ const Homepage = () => {
         <GridContainer>
          <ParticleComponent />
           <Layout >
-			<Intro />
+			{/* <Intro /> */}
 
-			{/* <Suspense fallback={null}>
-				<Donut />
-			</Suspense> */}
+			<Suspense fallback={null}>
+				<Totoro />
+			</Suspense>
 
 			<Container className="homePageContainer" >
 				<Section delay={0.1}>
@@ -134,7 +138,7 @@ const Homepage = () => {
 					> Youtube, </Link>
 					3D Rendering, Drums, Guitar {' '}
 					<Link 
-						style={{color: "purple", textDecoration: "none"}}
+						style={{color: "#42fad0", textDecoration: "none"}}
 						href="https://darkmeowfi.netlify.app/"
 					>Lofi, </Link> Rock Climbing, Parkour, 
 					<Link 
@@ -148,8 +152,8 @@ const Homepage = () => {
 				<br />
 				
 				<Section delay={0.4}>
-					<Heading as="h3" variant="section-title">
-						Inspired By 
+					<Heading as="h2" variant="section-title">
+						Portofolio Inspiration
 					</Heading>
 					<h1>{' '}
 						<Link 
@@ -158,6 +162,18 @@ const Homepage = () => {
 								textDecoration: "none", 
 								color: "green"
 							}}>Takuyama Matsuyama </Link>
+					</h1>
+					<br />
+					<Heading as="h2" variant="section-title">
+						3D Model Totoro 
+					</Heading>
+					<h1>{' '}
+						<Link 
+							href="https://www.cgtrader.com/jkielr" 
+							style={{
+								textDecoration: "none", 
+								color: "#ff00d5"
+							}}>Jesse Ragos</Link>
 					</h1>
 				</Section>
 

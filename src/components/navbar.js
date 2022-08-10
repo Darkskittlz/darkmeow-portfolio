@@ -44,9 +44,13 @@ transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
 const GridContainer = styled.div`
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 
 	@media (max-width: 960px) {
 		flex-direction: column;
+        width: 100%;
+        margin-left: 50%;
+        justify-content: center;
 	}
 `
 
@@ -69,7 +73,7 @@ const Navbar = props => {
       };
 
     return (
-        <Container style={{width: "100%", justifyItems: "center"}}>
+        <Container>
             <GridContainer>
                 <Grid1>
                     <Container2>
@@ -104,9 +108,10 @@ const Navbar = props => {
 
                         <SocialIcons>
                             <IconContainer>
-                                <img src={ResumeIcon}/>
-                                {/* <Modal showModal={showModal} setShowModal={setShowModal} />
-                                <GlobalStyle /> */}
+                                <Link href="/resume/resume2.pdf" target="_blank">
+                                    <img src={ResumeIcon}/>
+                                    <GlobalStyle />
+                                </Link>
                             </IconContainer>
                         </SocialIcons>
                         <DarkMode />
