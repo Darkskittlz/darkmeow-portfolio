@@ -118,7 +118,7 @@ const MatiasSanes = props => {
                             </TitleContainer>
                             <BodyContainer>
                                 <h1>
-                                    Ad cillum minim anim cillum in in proident ex ad. Voluptate proident duis incididunt officia dolore adipisicing. Id dolor laboris aute veniam ex velit fugiat nulla. Id ea sit deserunt incididunt proident in aliquip labore labore commodo et do mollit. Eu dolore laboris excepteur irure sunt nisi ullamco amet elit esse minim reprehenderit cupidatat adipisicing. Quis reprehenderit laborum incididunt consequat veniam consequat ipsum.
+                                    
                                 </h1>
                                 <List ml={4} my={4} style={{display: "flex", flexDirection: "column"}}>
                                     <ListItem>

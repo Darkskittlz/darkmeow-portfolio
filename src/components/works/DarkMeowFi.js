@@ -117,8 +117,8 @@ const DarkMeowFi = props => {
                             </TitleContainer>
                             <BodyContainer>
                                 <h1>
-                                    Sit nostrud laboris dolor quis sit aliquip aliqua aute adipisicing aute velit excepteur. Aute id enim cupidatat reprehenderit ut anim in minim ut. Nulla dolor esse veniam amet. Occaecat exercitation dolore minim eiusmod nisi in exercitation et laboris exercitation magna ipsum. Sint aliqua anim laborum laborum. Nulla labore ullamco cillum aliquip aliquip adipisicing ullamco et enim dolor id exercitation culpa. Mollit laboris fugiat do elit dolor laborum ad ex fugiat sint incididunt proident minim excepteur. 
-                                </h1>
+                                    
+                               </h1>
                                 <List ml={4} my={4} style={{display: "flex", flexDirection: "column"}}>
                                     <ListItem>
                                         <Badge2>Platform</Badge2>

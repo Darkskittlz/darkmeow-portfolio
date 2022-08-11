@@ -1,15 +1,13 @@
 import React, { Suspense, useRef } from 'react'
-import { useGLTF, OrbitControls } from '@react-three/drei'
+import { useGLTF, OrbitControls, OrthographicCamera } from '@react-three/drei'
 import { Canvas, useFrame } from "react-three-fiber"
 import styled from "styled-components"
-import ParticleComponent from '../../ParticleBackground2'
 
 const GridContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
 `
-
 
 
 
@@ -48,12 +46,12 @@ function TotoroModel({ ...props }) {
 useGLTF.preload('/totoro.gltf')
 
 
+
 export default function Totoro() {
 
   return (
     <GridContainer>
       <Canvas style={{
-          // background: "#171717",
           backdropFilter: "blur(50px)",
           backgroundColor: "rgb(255,255,255, 0.1)",
           borderRadius: "10px",
@@ -61,6 +59,18 @@ export default function Totoro() {
           height: "30vh",
           width: "50vh"
         }}>
+
+      <OrthographicCamera
+        makeDefault
+        zoom={8}
+        top={180}
+        left={200}
+        right={-200}
+        near={1}
+        far={2000}
+        position={[0, 0, 200]}
+      />
+
         <ambientLight intensity={1} />
         <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
           <Suspense fallback={null}>
@@ -68,6 +78,7 @@ export default function Totoro() {
           </Suspense>
           <OrbitControls />
       </Canvas>
+
     </GridContainer>
   )
 }

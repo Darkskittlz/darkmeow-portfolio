@@ -118,7 +118,7 @@ const ECommerce = props => {
                             </TitleContainer>
                             <BodyContainer>
                                 <h1>
-                                    Pariatur ipsum cupidatat consequat amet sunt commodo. Ipsum sunt minim id sunt id. Qui quis nulla adipisicing reprehenderit do dolore officia consectetur pariatur voluptate sunt aute. Et consequat excepteur consectetur amet eu. Duis qui sint consectetur ut sint laborum anim laborum. Consectetur Lorem laboris eu aute eu commodo amet quis aliqua qui Lorem ipsum aliqua fugiat. Magna do anim exercitation excepteur ex aliqua ullamco fugiat tempor ex elit deserunt tempor.
+                                    
                                 </h1>
                                 <List ml={4} my={4} style={{display: "flex", flexDirection: "column"}}>
                                     <ListItem>
