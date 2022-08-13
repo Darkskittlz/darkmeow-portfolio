@@ -61,6 +61,17 @@ const CloseContainer = styled.div`
   justify-content: flex-end;
 `
 
+const IMGContainer = styled.div`
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 10px;
+
+  img {
+    border-radius: 10px;
+  }
+`
+
 export default function ChakraModal() {
   const form = useRef();
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -94,6 +105,7 @@ export default function ChakraModal() {
           onClick={onOpen}
           css={{
             borderRadius: "10px",
+            border: "none",
             padding:"20px",
             cursor: "pointer",
             boxShadow: "0 0 40px rgb(1,74,250)",
@@ -182,7 +194,9 @@ export default function ChakraModal() {
                   Close
                 </Button>
               </ModalFooter>
-              <img src="https://miro.medium.com/max/1360/1*IRGHmiGsa16stedQvIaZfw.gif" alt="in development" />
+              <IMGContainer>
+                <img src="https://media1.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="in development" />
+              </IMGContainer>
               <Header2>Still In Development...</Header2>
             </ModalContent>
           </ModalOverlay>
