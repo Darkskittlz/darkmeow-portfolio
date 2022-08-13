@@ -116,7 +116,7 @@ export default function ChakraModal() {
           <ModalOverlay>
             <ModalContent 
               w="40%"
-              h="100%"
+              h="65%"
               ml="30%"
               mt="8%"
               p="10px"
