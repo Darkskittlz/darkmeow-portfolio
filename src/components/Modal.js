@@ -29,9 +29,17 @@ const GridContainer = styled.div`
   align-items: center;
 `
 
+const Grid2Container = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+`
+
 const ModalContainer = styled.div`
   display: flex;
 `
+
 
 const Header = styled.h1`
   font-size: 29px;
@@ -95,89 +103,92 @@ export default function ChakraModal() {
         >Contact Me</Button>
       </GridContainer>
 
-      <Modal 
-        closeOnOverlayClick={true} 
-        isOpen={isOpen} 
-        onClose={onClose}
-        isCentered
-        allowPinchZoom="true"
-        motionPreset='slideInBottom'
-      >
-        <ModalContainer>
-        <ModalOverlay>
-          <ModalContent 
-            w="40%"
-            h="650px"
-            ml="30%"
-            mt="22%"
-            p="10px"
-            pl="120px"
-            pr="120px"
-            css={{
-              display: "flex",
-              justifyContent: "center",  
-              backdropFilter: "blur(50px)",
-            }}
-          >
-            <CloseContainer>
-              <ModalCloseButton />
-            </CloseContainer>
-            <form ref={form} id="myForm" onSubmit={(event) => handleSubmit(event)}>
-            <Header>Contact Me</Header>
-              <ModalBody 
-                css={{display: "Flex", justifyContent: "center"}}
-                pb={6}
-                >
-                <FormControl>
-                <FormLabel 
-                  css={{
-                    fontSize: "40px",
-                    textAlign: "center"
-                  }}
-                  >Email address</FormLabel>
-                  <Input 
-                    value={input}
-                    type='email'
-                    onChange={(event) => {
-                      handleInputChange()
-                      // setEmail(event.target.value)
-                    }}
+    <Grid2Container>
+        <Modal 
+          closeOnOverlayClick={true} 
+          isOpen={isOpen} 
+          onClose={onClose}
+          isCentered
+          allowPinchZoom="true"
+          motionPreset='slideInBottom'
+        >
+          <ModalContainer>
+          <ModalOverlay>
+            <ModalContent 
+              w="40%"
+              h="100%"
+              ml="30%"
+              mt="8%"
+              p="10px"
+              pl="120px"
+              pr="120px"
+              css={{
+                display: "flex",
+                justifyContent: "center",  
+                alignContent: "center",
+                backdropFilter: "blur(50px)",
+              }}
+            >
+              <CloseContainer>
+                <ModalCloseButton />
+              </CloseContainer>
+              <form ref={form} id="myForm" onSubmit={(event) => handleSubmit(event)}>
+              <Header>Contact Me</Header>
+                <ModalBody 
+                  css={{display: "Flex", justifyContent: "center"}}
+                  pb={6}
+                  >
+                  <FormControl>
+                  <FormLabel 
                     css={{
-                      fontSize: "30px",
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "center",
+                      fontSize: "40px",
+                      textAlign: "center"
                     }}
-                    />
-                  {!isError ? (
-                    <FormHelperText css={{fontSize: "18px"}}>
-                      Enter the email you'd like to receive our newsletter on
-                    </FormHelperText>
-                  ) : (
-                    <FormErrorMessage>Email is required.</FormErrorMessage>
-                    )}
-                </FormControl>
-              </ModalBody>
-            </form>
-            <ModalFooter
-              css={{display: "flex", justifyContent: "center", }}
-              >
-              <Button 
-                className="modalButton"
-                id="btn"
-                value="send"
-                type="submit"
-                > Send </Button>
-              <Button className="modalButton" onClick={onClose}>
-                Close
-              </Button>
-            </ModalFooter>
-            <img src="https://miro.medium.com/max/1360/1*IRGHmiGsa16stedQvIaZfw.gif" alt="in development" />
-            <Header2>Still In Development...</Header2>
-          </ModalContent>
-         </ModalOverlay>
-        </ModalContainer>
-      </Modal>
+                    >Email address</FormLabel>
+                    <Input 
+                      value={input}
+                      type='email'
+                      onChange={(event) => {
+                        handleInputChange()
+                        // setEmail(event.target.value)
+                      }}
+                      css={{
+                        fontSize: "30px",
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                      />
+                    {!isError ? (
+                      <FormHelperText css={{fontSize: "18px"}}>
+                        Enter the email you'd like to receive our newsletter on
+                      </FormHelperText>
+                    ) : (
+                      <FormErrorMessage>Email is required.</FormErrorMessage>
+                      )}
+                  </FormControl>
+                </ModalBody>
+              </form>
+              <ModalFooter
+                css={{display: "flex", justifyContent: "center", }}
+                >
+                <Button 
+                  className="modalButton"
+                  id="btn"
+                  value="send"
+                  type="submit"
+                  > Send </Button>
+                <Button className="modalButton" onClick={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+              <img src="https://miro.medium.com/max/1360/1*IRGHmiGsa16stedQvIaZfw.gif" alt="in development" />
+              <Header2>Still In Development...</Header2>
+            </ModalContent>
+          </ModalOverlay>
+          </ModalContainer>
+        </Modal>
+      </Grid2Container>
     </>
   )
 }
