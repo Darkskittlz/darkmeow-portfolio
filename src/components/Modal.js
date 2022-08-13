@@ -1,129 +1,183 @@
-import React, { useRef, useEffect, useCallback } from "react";
-import { useSpring, animated } from "react-spring";
-import styled from "styled-components";
-import { MdClose } from "react-icons/md";
+import styled from 'styled-components'
+import "../Styles/App.css"
+import React, { useState, useRef } from 'react'
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  Input,
+  FormHelperText,
+} from '@chakra-ui/react'
 
-import ResumeIMG from "../assets/resume/resume2.pdf";
-import TestIMG from "../assets/images/darkProfile (1).jpg"
-import { Image } from "antd";
 
 
-const Background = styled.div`
+const GridContainer = styled.div`
+  display: flex;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
   position: relative;
-  display: flex;
   justify-content: center;
+  padding: 20px;
   align-items: center;
-`;
+`
 
-const ModalWrapper = styled.div`
-  width: 600px;
-  height: 800px;
-  box-shadow: 0 5px 16px rgb(255,255,255);
-  margin-left: -350px;
-  color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: fixed;
-  z-index: 10;
-  align-items: center;
-  justify-items: center;
-  border-radius: 10px;
-`;
-
-const ModalContent = styled.div`
+const ModalContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.8;
-  backdrop-filter: blur(20px);
-  color: #141414;
-  position: fixed;
+`
 
-  h1 {
-    display: flex;
-    color: white;
+const Header = styled.h1`
+  font-size: 29px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-color);
+`
+
+const Header2 = styled.h1`
+  font-size: 19px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-color);
+`
+
+const CloseContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+`
+
+export default function ChakraModal() {
+  const form = useRef();
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [email, setEmail] = useState(null)
+  const [input, setInput] = useState('')
+
+  const handleInputChange = (e) => setInput(e.target.value)
+
+  const isError = input === ''
+
+  // const sendData2 = async () => {
+  //   const formattedName = encodeURIComponent(name)
+  //   const formattedEmail = encodeURIComponent(email)
+
+
+  //   const URL = `name=${formattedName}&genre=${formattedGenre}&email=${formattedEmail}&src=${formattedSrc}`;
+  //   const results = await axios.get"/.vercel/functions/email/?" + URL);
+  //   console.log(results);
+  // }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // sendData2();
   }
 
-  p {
-    margin-bottom: 1rem;
-  }
-
-  button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-  }
-`;
-
-const CloseModalButton = styled(MdClose)`
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  z-index: 10;
-`;
-
-
-
-
-export const Modal = ({ showModal, setShowModal }) => {
-  const modalRef = useRef();
-  const animation = useSpring({
-    config: {
-      duration: 250,
-    },
-    opacity: showModal ? 1 : 0,
-    transform: showModal ? `translateY(0%)` : `translateY(100%)`,
-  });
-
-  const closeModal = (e) => {
-    if (modalRef.current === e.target) {
-      setShowModal(false);
-    }
-  };
-
-  const keyPress = useCallback(
-    (e) => {
-      if (e.key === "Escape" && showModal) {
-        setShowModal(false);
-      }
-    },
-    [setShowModal, showModal]
-  );
-
-  // Escape Key useEffect listener
-  // useEffect(() => {
-  //   document.addEventListener("keydown", keyPress);
-  //   return () => document.removeEventLIstener("keydown", keyPress);
-  // }, [keyPress]);
 
   return (
     <>
-      {showModal ? (
-        <Background ref={modalRef} onClick={closeModal}>
-          <animated.div style={animation}>
-            <ModalWrapper showModal={showModal}>
-              <ModalContent>
-                <img href="/assets/resume/resume2.pdf" target="_blank" />
-              </ModalContent>
-              <CloseModalButton
-                aria-label="Close modal"
-                onClick={() => setShowModal((prev) => !prev)}
-              />
-            </ModalWrapper>
-          </animated.div>
-        </Background>
-      ) : null}
-    </>
-  );
-};
+      <GridContainer>
+        <Button 
+          onClick={onOpen}
+          css={{
+            borderRadius: "10px",
+            padding:"20px",
+            cursor: "pointer",
+            boxShadow: "0 0 40px rgb(1,74,250)",
+            background: "rgb(1,74,250)",
+            background: "linear-gradient(127deg, rgba(1,74,250,1) 0%, rgba(0,233,71,1) 100%)"
+          }}
+        >Contact Me</Button>
+      </GridContainer>
 
-export default Modal;
+      <Modal 
+        closeOnOverlayClick={true} 
+        isOpen={isOpen} 
+        onClose={onClose}
+        isCentered
+        allowPinchZoom="true"
+        motionPreset='slideInBottom'
+      >
+        <ModalContainer>
+        <ModalOverlay>
+          <ModalContent 
+            w="40%"
+            h="650px"
+            ml="30%"
+            mt="22%"
+            p="10px"
+            pl="120px"
+            pr="120px"
+            css={{
+              display: "flex",
+              justifyContent: "center",  
+              backdropFilter: "blur(50px)",
+            }}
+          >
+            <CloseContainer>
+              <ModalCloseButton />
+            </CloseContainer>
+            <form ref={form} id="myForm" onSubmit={(event) => handleSubmit(event)}>
+            <Header>Contact Me</Header>
+              <ModalBody 
+                css={{display: "Flex", justifyContent: "center"}}
+                pb={6}
+                >
+                <FormControl>
+                <FormLabel 
+                  css={{
+                    fontSize: "40px",
+                    textAlign: "center"
+                  }}
+                  >Email address</FormLabel>
+                  <Input 
+                    value={input}
+                    type='email'
+                    onChange={(event) => {
+                      handleInputChange()
+                      // setEmail(event.target.value)
+                    }}
+                    css={{
+                      fontSize: "30px",
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                    />
+                  {!isError ? (
+                    <FormHelperText css={{fontSize: "18px"}}>
+                      Enter the email you'd like to receive our newsletter on
+                    </FormHelperText>
+                  ) : (
+                    <FormErrorMessage>Email is required.</FormErrorMessage>
+                    )}
+                </FormControl>
+              </ModalBody>
+            </form>
+            <ModalFooter
+              css={{display: "flex", justifyContent: "center", }}
+              >
+              <Button 
+                className="modalButton"
+                id="btn"
+                value="send"
+                type="submit"
+                > Send </Button>
+              <Button className="modalButton" onClick={onClose}>
+                Close
+              </Button>
+            </ModalFooter>
+            <img src="https://miro.medium.com/max/1360/1*IRGHmiGsa16stedQvIaZfw.gif" alt="in development" />
+            <Header2>Still In Development...</Header2>
+          </ModalContent>
+         </ModalOverlay>
+        </ModalContainer>
+      </Modal>
+    </>
+  )
+}

@@ -29,6 +29,10 @@ const TitleContainer = styled.div`
         font-size: 30px;
         font-weight: 700;
         color: #A501EB;
+
+        @media (max-width: 960px) {
+            font-size: 25px;
+        }
     }
 `
 
@@ -64,7 +68,7 @@ const Animation = keyframes`
 const Badge2 = styled.div`
   backdrop-filter: blur(40px);
   padding: 8px;
-  width: 15%;
+  width: 19%;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -74,6 +78,11 @@ const Badge2 = styled.div`
   background: rgb(239,113,253);
   background: linear-gradient(34deg, rgba(239,113,253,0.453486050124717) 31%, rgba(92,114,255,0.951273660744186) 82%);
   //   box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
+
+  @media screen and (max-width:960px) {
+    width: 25%;
+  }
+
 `
 
 const ImageContainer = styled.div`
@@ -95,7 +104,7 @@ const ThreejsPortfolio = props => {
                             style={{
                                 marginTop: "10px", 
                                 height: "60vh",
-                                justifyItems: "center",
+                                justifyItems: "flex-start",
                                 backdropFilter: "blur(25px)",
                                 padding: "20px",
                                 borderRadius: "10px"
@@ -106,15 +115,16 @@ const ThreejsPortfolio = props => {
                                 <Image
                                     fit="cover"
                                     mr={20}
-                                    src="/images/logos/react.svg"
+                                    src="/images/logos/threejsBadge.png"
                                     style={{  
                                         boxShadow: "0 0 20px rgba(80, 78, 78, 0.9)", 
                                         borderRadius: "50px", 
                                         padding: "10px",
+                                        height: "110px"
                                     }}
                                 />
                             </ImageContainer>
-                                <h1><Badge colorScheme="blue">ThreeJS Portfolio Project</Badge></h1> 
+                                <h1><Badge colorScheme="blue">ThreeJS Portfolio</Badge></h1> 
                             </TitleContainer>
                             <BodyContainer>
                                 <h1>

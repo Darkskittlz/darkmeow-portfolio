@@ -17,6 +17,7 @@ import {
 import Technologies from './Technologies';
 import { SectionDivider } from '../Styles/GlobalStyles';
 import Totoro from './threeJS/Totoro';
+import ChakraModal from './Modal';
 
 
 const GridContainer = styled.div`
@@ -183,6 +184,10 @@ const Homepage = () => {
 
 				<Section delay={0.6}>	
 					<Timeline />
+				</Section>
+
+				<Section delay={0.7}>	
+					<ChakraModal />
 				</Section>
 				
 			</Container>

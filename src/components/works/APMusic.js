@@ -64,7 +64,7 @@ const Animation = keyframes`
 const Badge2 = styled.div`
   backdrop-filter: blur(40px);
   padding: 8px;
-  width: 15%;
+  width: 21%;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -74,12 +74,28 @@ const Badge2 = styled.div`
   background: rgb(239,113,253);
   background: linear-gradient(34deg, rgba(239,113,253,0.453486050124717) 31%, rgba(92,114,255,0.951273660744186) 82%);
   //   box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
+  
+  @media screen and (max-width:960px) {
+    width: 25%;
+  }
 `
 
 const ImageContainer = styled.div`
     animation-name: ${Animation},
     animation-duration: 4s;
     animation-iteration-count: infinite;
+
+
+    img {
+        height: 12vw;
+        margin-right: 5px;
+        border-radius: 100px;
+
+        @media screen and (max-width: 960px) {
+            height: 20vw;
+        }
+
+    }
 `
 
 const APMusic = props => {
@@ -95,7 +111,7 @@ const APMusic = props => {
                             style={{
                                 marginTop: "10px", 
                                 height: "56vh",
-                                justifyItems: "center",
+                                justifyItems: "flex-start",
                                 backdropFilter: "blur(25px)",
                                 padding: "20px",
                                 borderRadius: "10px"
@@ -103,18 +119,9 @@ const APMusic = props => {
                         >
                             <TitleContainer>
                             <ImageContainer>
-                                <Image
-                                    fit="cover"
-                                    mr={20}
-                                    src="/images/logos/react.svg"
-                                    style={{  
-                                        boxShadow: "0 0 20px rgba(80, 78, 78, 0.9)", 
-                                        borderRadius: "50px", 
-                                        padding: "10px",
-                                    }}
-                                />
+                                <img src="https://raw.githubusercontent.com/Darkskittlz/Aidan-Website/main/src/assets/sunLogo.png" />
                             </ImageContainer>
-                                <h1><Badge colorScheme="blue">Aidan Paul Music Project</Badge></h1> 
+                                <h1><Badge colorScheme="blue">Aidan Paul <br /> Music Project</Badge></h1> 
                             </TitleContainer>
                             <BodyContainer>
                                 <h1>

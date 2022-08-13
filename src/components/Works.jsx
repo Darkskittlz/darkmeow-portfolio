@@ -248,7 +248,7 @@ const Works = props => {
                                 <LinkBox cursor='pointer'>
                                     <Image
                                         fit="cover"
-                                        src="/images/works/tanjiroScreenshot.png"
+                                        src="/images/works/zenitsuThumb.png"
                                         alt="E-Commerce Project"	
                                         className="projectThumbnail"
                                         placeholder="blur"

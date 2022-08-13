@@ -6,6 +6,8 @@ import ParticleComponent from '../../ParticleBackground3'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import "../../Styles/App.css"
 
+import zenitsuGIF from "../../assets/images/zenitsuGIF.gif"
+
 
 const GridContainer = styled.div`
     width: 50%;
@@ -29,13 +31,17 @@ const TitleContainer = styled.div`
         font-size: 30px;
         font-weight: 700;
         color: #A501EB;
+
+        @media screen and (max-width:960px) {
+            font-size: 20px;
+          }
     }
 `
 
 const BodyContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-items: flex-start;
     h1 {
         font-size: 23px;
         text-indent: 30px;
@@ -64,7 +70,7 @@ const Animation = keyframes`
 const Badge2 = styled.div`
   backdrop-filter: blur(40px);
   padding: 8px;
-  width: 15%;
+  width: 19%;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -74,28 +80,46 @@ const Badge2 = styled.div`
   background: rgb(239,113,253);
   background: linear-gradient(34deg, rgba(239,113,253,0.453486050124717) 31%, rgba(92,114,255,0.951273660744186) 82%);
   //   box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
+
+  
+  @media screen and (max-width:960px) {
+    width: 25%;
+  }
 `
 
 const ImageContainer = styled.div`
     animation-name: ${Animation},
     animation-duration: 4s;
     animation-iteration-count: infinite;
+
+    img {
+        box-shadow: 0 0 20px rgb(207,250,1);
+        object-fit: cover;
+        height: 120px;
+        border-radius: 50px;
+        margin-right: 20px;
+
+        @media screen and (max-width:960px) {
+            height: 100px;
+          }
+        
+    }
 `
 
 const ECommerce = props => {
     return (
         <>
           <ParticleComponent />
-            <Layout>
-                <Container maxW='2x1'>
-                    <GridContainer>
+            <GridContainer>
+              <Layout>
+                <Container maxW='2x1' style={{flexDirection: "column"}}>
                         <SimpleGrid 
                             columns={[1, 1, 1]} 
                             gap={10}
                             style={{
                                 marginTop: "10px", 
                                 height: "56vh",
-                                justifyItems: "center",
+                                justifyItems: "baseline",
                                 backdropFilter: "blur(25px)",
                                 padding: "20px",
                                 borderRadius: "10px"
@@ -103,18 +127,9 @@ const ECommerce = props => {
                         >
                             <TitleContainer>
                             <ImageContainer>
-                                <Image
-                                    fit="cover"
-                                    mr={20}
-                                    src="/images/logos/react.svg"
-                                    style={{  
-                                        boxShadow: "0 0 20px rgba(80, 78, 78, 0.9)", 
-                                        borderRadius: "50px", 
-                                        padding: "10px",
-                                    }}
-                                />
+                                <img src={zenitsuGIF} />
                             </ImageContainer>
-                                <h1><Badge colorScheme="blue">E-Commerce Project</Badge></h1> 
+                                <h1><Badge colorScheme="blue">Demon Slayer <br /> E-Commerce</Badge></h1> 
                             </TitleContainer>
                             <BodyContainer>
                                 <h1>
@@ -155,9 +170,9 @@ const ECommerce = props => {
                         <FooterContainer>
                             <Footer />
                         </FooterContainer>
-                    </GridContainer>
                 </Container>
-            </Layout>
+              </Layout>
+            </GridContainer>
         </>
     )
 }

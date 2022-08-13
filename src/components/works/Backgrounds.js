@@ -74,6 +74,10 @@ const Badge2 = styled.div`
   background: rgb(239,113,253);
   background: linear-gradient(34deg, rgba(239,113,253,0.453486050124717) 31%, rgba(92,114,255,0.951273660744186) 82%);
   //   box-shadow: 0 0 20px rgba(80, 78, 78, 0.9);
+
+  @media screen and (max-width:960px) {
+    width: 25%;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -106,11 +110,12 @@ const Backgrounds = props => {
                                 <Image
                                     fit="cover"
                                     mr={20}
-                                    src="/images/logos/react.svg"
+                                    src="/images/sun.png"
                                     style={{  
-                                        boxShadow: "0 0 20px rgba(80, 78, 78, 0.9)", 
+                                        boxShadow: "0 0 40px rgb(255,0,0)", 
                                         borderRadius: "50px", 
-                                        padding: "10px",
+                                        padding: "0px",
+                                        height: "85px"
                                     }}
                                 />
                             </ImageContainer>

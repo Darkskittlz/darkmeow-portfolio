@@ -113,3 +113,16 @@ nav a {
     height: 200px;
   }
 }
+
+.modalButton {
+  padding: 20px;
+  margin-left: 5px;
+  background-color: lightblue;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.modalClick {
+  padding: 10px;
+}

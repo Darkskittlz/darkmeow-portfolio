@@ -63,7 +63,7 @@ const Animation = keyframes`
 const Badge2 = styled.div`
   backdrop-filter: blur(40px);
   padding: 8px;
-  width: 15%;
+  width: 25%;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -79,6 +79,15 @@ const ImageContainer = styled.div`
     animation-name: ${Animation},
     animation-duration: 4s;
     animation-iteration-count: infinite;
+
+    img {
+        box-shadow: 0 0 20px rgb(211,1,250);
+        object-fit: cover;
+        height: 120px;
+        border-radius: 50px;
+        margin-right: 20px;
+        
+    }
 `
 
 const DarkMeowFi = props => {
@@ -94,7 +103,7 @@ const DarkMeowFi = props => {
                             style={{
                                 marginTop: "10px", 
                                 height: "56vh",
-                                justifyItems: "center",
+                                justifyItems: "flex-start",
                                 backdropFilter: "blur(25px)",
                                 padding: "20px",
                                 borderRadius: "10px"
@@ -102,16 +111,7 @@ const DarkMeowFi = props => {
                         >
                             <TitleContainer>
                             <ImageContainer>
-                                <Image
-                                    fit="cover"
-                                    mr={20}
-                                    src="/images/logos/react.svg"
-                                    style={{  
-                                        boxShadow: "0 0 20px rgba(80, 78, 78, 0.9)", 
-                                        borderRadius: "50px", 
-                                        padding: "10px",
-                                    }}
-                                />
+                                <img src="https://im.ezgif.com/tmp/ezgif-1-3c6417bc61.gif" />
                             </ImageContainer>
                                 <h1><Badge colorScheme="blue">DarkMeowFi</Badge></h1> 
                             </TitleContainer>
