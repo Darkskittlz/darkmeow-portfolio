@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ParticlesBg from 'particles-bg'
-import icon from "../src/assets/images/logos/react.svg";
+import icon from "../src/assets/images/YinYang2.png";
 
 
 class ParticleComponent extends Component {
@@ -17,7 +17,7 @@ class ParticleComponent extends Component {
       scale: [.1, 0.9],
       body: icon,
       position: "all",
-      //color: ["random", "#ff0000"],
+      color: ["random", "blue"],
       cross: "dead",
       random: 10
     };

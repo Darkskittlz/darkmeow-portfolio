@@ -20,6 +20,9 @@ import ThreejsPortfolio from './components/works/ThreejsPortfolio';
 import Nhost from './components/works/Nhost'; 
 import SPAPortfolio from './components/works/SPAPortfolio'; 
 import BlogPost2 from './components/posts/Blog2';
+import Tutorials from './components/Tutorials';
+import ReactNhost from './components/tutorials/Youtube';
+import Youtube from './components/tutorials/Youtube';
 
 
 const NavContainer = styled.div`
@@ -59,7 +62,9 @@ const App = ({ Component, pageProps, router }) => {
                             <Route path='/Works/SPAPortfolio' element={<SPAPortfolio />} />                            
                             <Route path='/Posts' element={<Posts />} />                            
                             <Route path='/Posts/Blog1' element={<BlogPost />} />                            
-                            <Route path='/Posts/Blog2' element={<BlogPost2 />} />                            
+                            <Route path='/Posts/Blog2' element={<BlogPost2 />} />    
+                            <Route path='/Tutorials' element={<Tutorials />} />                       
+                            <Route path='/Tutorials/Youtube' element={<Youtube />} />                        
                       </Routes>                       
                   </div>
               </Layout>

@@ -5,6 +5,7 @@ import Footer from '../footer'
 import ParticleComponent from '../../ParticleBackground3'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import "../../Styles/App.css"
+import CatGIF from "../../assets/images/catPizza.gif"
 
 const GridContainer = styled.div`
     width: 50%;
@@ -84,6 +85,7 @@ const ImageContainer = styled.div`
         box-shadow: 0 0 20px rgb(211,1,250);
         object-fit: cover;
         height: 120px;
+        width: 140px;
         border-radius: 50px;
         margin-right: 20px;
         
@@ -111,7 +113,7 @@ const DarkMeowFi = props => {
                         >
                             <TitleContainer>
                             <ImageContainer>
-                                <img src="https://im.ezgif.com/tmp/ezgif-1-3c6417bc61.gif" />
+                                <img src={CatGIF} />
                             </ImageContainer>
                                 <h1><Badge colorScheme="blue">DarkMeowFi</Badge></h1> 
                             </TitleContainer>

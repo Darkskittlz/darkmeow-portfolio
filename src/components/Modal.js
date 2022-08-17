@@ -34,10 +34,17 @@ const Grid2Container = styled.div`
   width: 100%;
   justify-content: center;
   align-content: center;
+
+
+
 `
 
 const ModalContainer = styled.div`
   display: flex;
+
+  @media screen and (max-width: 960px) {
+    width: 90%;
+  }  
 `
 
 
@@ -46,6 +53,11 @@ const Header = styled.h1`
   margin-bottom: 20px;
   text-align: center;
   color: var(--text-color);
+
+  @media screen and (max-width: 960px) {
+    font-size: 20px;
+    text-align: left;
+  }
 `
 
 const Header2 = styled.h1`
@@ -53,12 +65,21 @@ const Header2 = styled.h1`
   margin-bottom: 20px;
   text-align: center;
   color: var(--text-color);
+
+  @media screen and (max-width: 960px) {
+
+  }
 `
 
 const CloseContainer = styled.div`
   display: flex;
   width: 100%;
+  padding-right: 200px;
   justify-content: flex-end;
+
+  @media screen and (max-width: 960px) {
+    padding-right: 10px;
+  }
 `
 
 const IMGContainer = styled.div`
@@ -69,6 +90,10 @@ const IMGContainer = styled.div`
 
   img {
     border-radius: 10px;
+
+    @media screen and (max-width: 960px) {
+      height: 150px;
+    }
   }
 `
 
@@ -125,81 +150,82 @@ export default function ChakraModal() {
           motionPreset='slideInBottom'
         >
           <ModalContainer>
-          <ModalOverlay>
-            <ModalContent 
-              w="40%"
-              h="65%"
-              ml="30%"
-              mt="8%"
-              p="10px"
-              pl="120px"
-              pr="120px"
-              css={{
-                display: "flex",
-                justifyContent: "center",  
-                alignContent: "center",
-                backdropFilter: "blur(50px)",
-              }}
-            >
-              <CloseContainer>
-                <ModalCloseButton />
-              </CloseContainer>
-              <form ref={form} id="myForm" onSubmit={(event) => handleSubmit(event)}>
-              <Header>Contact Me</Header>
-                <ModalBody 
-                  css={{display: "Flex", justifyContent: "center"}}
-                  pb={6}
-                  >
-                  <FormControl>
-                  <FormLabel 
-                    css={{
-                      fontSize: "40px",
-                      textAlign: "center"
-                    }}
-                    >Email address</FormLabel>
-                    <Input 
-                      value={input}
-                      type='email'
-                      onChange={(event) => {
-                        handleInputChange()
-                        // setEmail(event.target.value)
-                      }}
+            <ModalOverlay>
+              <ModalContent 
+                // w="40%"
+                // h="65%"
+                // ml="30%"
+                // mt="8%"
+                // p="10px"
+                // pl="120px"
+                // pr="120px"
+                css={{
+                  display: "flex",
+                  justifyContent: "center",  
+                  marginTop: "-200px",
+                  alignContent: "center",
+                  backdropFilter: "blur(50px)"
+                }}
+              >
+                <CloseContainer>
+                  <ModalCloseButton />
+                </CloseContainer>
+                <form ref={form} id="myForm" onSubmit={(event) => handleSubmit(event)}>
+                <Header>Contact Me</Header>
+                  <ModalBody 
+                    css={{display: "Flex", justifyContent: "center"}}
+                    pb={6}
+                    >
+                    <FormControl>
+                    <FormLabel 
                       css={{
-                        fontSize: "30px",
-                        width: "100%",
-                        display: "flex",
-                        justifyContent: "center",
+                        fontSize: "40px",
+                        textAlign: "center"
                       }}
-                      />
-                    {!isError ? (
-                      <FormHelperText css={{fontSize: "18px"}}>
-                        Enter the email you'd like to receive our newsletter on
-                      </FormHelperText>
-                    ) : (
-                      <FormErrorMessage>Email is required.</FormErrorMessage>
-                      )}
-                  </FormControl>
-                </ModalBody>
-              </form>
-              <ModalFooter
-                css={{display: "flex", justifyContent: "center", }}
-                >
-                <Button 
-                  className="modalButton"
-                  id="btn"
-                  value="send"
-                  type="submit"
-                  > Send </Button>
-                <Button className="modalButton" onClick={onClose}>
-                  Close
-                </Button>
-              </ModalFooter>
-              <IMGContainer>
-                <img src="https://media1.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="in development" />
-              </IMGContainer>
-              <Header2>Still In Development...</Header2>
-            </ModalContent>
-          </ModalOverlay>
+                      >Email address</FormLabel>
+                      <Input 
+                        value={input}
+                        type='email'
+                        onChange={(event) => {
+                          handleInputChange()
+                          // setEmail(event.target.value)
+                        }}
+                        css={{
+                          fontSize: "30px",
+                          width: "100%",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                        />
+                      {!isError ? (
+                        <FormHelperText css={{fontSize: "18px"}}>
+                          Enter the email you'd like to receive our newsletter on
+                        </FormHelperText>
+                      ) : (
+                        <FormErrorMessage>Email is required.</FormErrorMessage>
+                        )}
+                    </FormControl>
+                  </ModalBody>
+                </form>
+                <ModalFooter
+                  css={{display: "flex", justifyContent: "center", }}
+                  >
+                  <Button 
+                    className="modalButton"
+                    id="btn"
+                    value="send"
+                    type="submit"
+                    > Send </Button>
+                  <Button className="modalButton" onClick={onClose}>
+                    Close
+                  </Button>
+                </ModalFooter>
+                <IMGContainer>
+                  <img src="https://media1.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="in development" />
+                </IMGContainer>
+                <Header2>Still In Development...</Header2>
+              </ModalContent>
+            </ModalOverlay>
           </ModalContainer>
         </Modal>
       </Grid2Container>

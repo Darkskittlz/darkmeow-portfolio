@@ -126,3 +126,15 @@ nav a {
 .modalClick {
   padding: 10px;
 }
+
+.anim {
+  width: 20vw;
+  height: 20vh;
+  z-index: 999;
+  /* background-color: black; */
+}
+
+.ModalContentID {
+  width: 50px;
+
+}

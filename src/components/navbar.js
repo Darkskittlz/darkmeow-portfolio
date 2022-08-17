@@ -124,9 +124,6 @@ const Navbar = props => {
                         <Box>
                             <Menu>
                                 <MenuButton 
-                                    // as={IconButton}
-                                    // icon={<HamburgerIcon />} 
-                                    // variant="outline" 
                                     height="42px"
                                     width="42px"
                                     aria-label="Options"
@@ -143,10 +140,13 @@ const Navbar = props => {
                                         <MenuItem as={Link}>Home</MenuItem>
                                     </Link>
                                     <Link color="var(--text-color)" href='/works'>
-                                        <MenuItem as={Link}>Work</MenuItem>
+                                        <MenuItem as={Link}>Works</MenuItem>
                                     </Link>
                                     <Link color="var(--text-color)" href='/posts'>
-                                        <MenuItem as={Link}>Posts</MenuItem>
+                                        <MenuItem as={Link}>Blog</MenuItem>
+                                    </Link>
+                                    <Link color="var(--text-color)" href='/tutorials'>
+                                        <MenuItem as={Link}>Tutorials</MenuItem>
                                     </Link>
                                 </MenuList>
                             </Menu>
