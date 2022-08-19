@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import Footer from './footer';
 import { SectionDivider } from '../Styles/GlobalStyles';
+import Intro from './Intro';
 
 
 
@@ -72,6 +73,7 @@ const Posts = props => {
         <>
             <GridContainer>
                 <ParticleComponent />
+                    <Intro />
                     <Flex>
                         <Center w="80%">
                             <Heading as="h2" size="lg" fontSize="80px" mb={24}>
