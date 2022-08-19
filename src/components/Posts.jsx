@@ -25,7 +25,7 @@ width: 100%;
 justify-content: center;
 
 @media (max-width: 960px) {
-    margin-left: 160px;
+    margin-left: 15%;
     padding-bottom: 120px;
 }
 `
@@ -38,6 +38,26 @@ const GridContainer = styled.div`
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        justify-content: center;
+    }
+`
+
+const Grid2Container = styled.div`
+    width: 100%;
+
+    @media screen and (max-width: 960px) {
+        width: 5%;
+        margin-left: 45%;
+    }
+`
+
+const BlogImage = styled.img`
+    width: 440px;
+    border-radius: 10px;
+
+    @media screen and (max-width: 960px) {
+        width: 290px;
+        margin-left: 5%;
     }
 `
 
@@ -60,50 +80,37 @@ const Posts = props => {
                             </Heading>
                         </Center>
                     </Flex>
-                    <Flex>
-                        <Center w="100%">
-                            <Box>
-                                <Section delay={0.2}>
-                                    <LinkBox cursor='pointer'>
-                                        <Image
-                                            fit="cover"
-                                            src="/images/postThumb.jpg"
-                                            alt="Backgrounds Project"	
-                                            height="505px"
-                                            width="440px"
-                                            style={{borderRadius: "10px"}}
-                                        />
-                                        <LinkOverlay href={`posts/blog1`}>
-                                            <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>From E-Boy To Engineer</Text>
-                                        </LinkOverlay>
-                                    </LinkBox>
-                                </Section>
-                            </Box>
-                        </Center>
-                    </Flex>
-                    <Gap />
-                    <Flex>
-                        <Center w="100%">
-                            <Box>
-                                <Section delay={0.3}>
-                                    <LinkBox cursor='pointer'>
-                                        <Image 
-                                            display="inline-block"
-                                            width="335px"
-                                            height="500px"
-                                            fit="cover"
-                                            src="/images/proPic2.jpg"
-                                            alt="Profile IMG"
-                                            style={{borderRadius: "10px"}}							   
-                                        />
-                                        <LinkOverlay href={`posts/blog2`}>
-                                            <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>GraphQL </Text>
-                                        </LinkOverlay>
-                                    </LinkBox>                                   
-                                </Section>
-                            </Box>                        
-                        </Center>
-                    </Flex>
+                    <Grid2Container>
+                        <Flex>
+                            <Center w="100%">
+                                <Box>
+                                    <Section delay={0.2}>
+                                        <LinkBox cursor='pointer'>
+                                            <BlogImage src="/images/postThumb.jpg" alt="Backgrounds Project" />
+                                            <LinkOverlay href={`posts/blog1`}>
+                                                <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>From E-Boy To Engineer</Text>
+                                            </LinkOverlay>
+                                        </LinkBox>
+                                    </Section>
+                                </Box>
+                            </Center>
+                        </Flex>
+                        <Gap />
+                        <Flex>
+                            <Center w="100%">
+                                <Box>
+                                    <Section delay={0.3}>
+                                        <LinkBox cursor='pointer'>
+                                            <BlogImage src="/images/proPic2.jpg" alt="Profile IMG" />
+                                            <LinkOverlay href={`posts/blog2`}>
+                                                <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>GraphQL </Text>
+                                            </LinkOverlay>
+                                        </LinkBox>                                   
+                                    </Section>
+                                </Box>                        
+                            </Center>
+                        </Flex>
+                    </Grid2Container>
                 <FooterContainer>
                     <Footer />
                 </FooterContainer>

@@ -31,11 +31,10 @@ const NavContainer = styled.div`
 
     @media (max-width: 960px){
         width: 50%;
-        margin-left: 15%;
+        margin-left: 12%;
 
     }
 `
-
 
 const App = ({ Component, pageProps, router }) => {
   return (

@@ -1,9 +1,7 @@
 import '../Styles/App.css';
 import styled from 'styled-components';
 import Layout from '../components/layouts/article'
-import Section from '../components/section'
 import ParticleComponent from '../ParticleBackground2';
-import WaveBackground from './WaveBackground';
 import Footer from './footer';
 import { SectionDivider } from '../Styles/GlobalStyles';
 import { 
@@ -18,7 +16,8 @@ import {
     Center,
     Button
 } from '@chakra-ui/react'
-<script src="https://apis.google.com/js/api.js"></script>
+import Gradient from "../assets/gradients/gradient.png";
+
 
 
 
@@ -95,9 +94,8 @@ const BlurContainer = styled.div`
     width: 30%;
     padding: 20px;
     border-radius: 10px;
-    backdrop-filter: blur(50px);
     box-shadow: 0 0 10px #ffffff;
-
+    
     
     @media screen and (max-width: 960px) {
         width: 80%;   
@@ -140,7 +138,7 @@ const IMGContainer = styled.div`
 
 
 const Tutorials = props => {
-
+<script src="https://apis.google.com/js/api.js"></script>
 
     return (
         <>
