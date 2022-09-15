@@ -114,7 +114,7 @@ const Navbar = props => {
 
                         <SocialIcons>
                             <IconContainer>
-                                <Link href="/resume/resume2.pdf" target="_blank">
+                                <Link href="/resume/resume.pdf" target="_blank">
                                     <img src={ResumeIcon}/>
                                     <GlobalStyle />
                                 </Link>
