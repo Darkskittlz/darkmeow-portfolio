@@ -45,7 +45,7 @@ const Intro = (props) => {
                             }, 
                         }}>
                             <Container2>
-                                <SectionTitle>Jeremy Neal</SectionTitle>
+                                <SectionTitle>Tristan Neal</SectionTitle>
                                 <h3> <span id="spanText" ref={textRef}></span></h3>    
                             </Container2>
                         </motion.div>

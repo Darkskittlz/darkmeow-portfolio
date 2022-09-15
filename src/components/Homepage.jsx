@@ -7,12 +7,12 @@ import Footer from './footer';
 import Intro from './Intro';
 import Timeline from './TimeLine';
 import { Suspense } from 'react';
-import { 
+import {
 	Link,
 	Box,
 	Heading,
-    Image,
-	Container, 
+	Image,
+	Container,
 } from '@chakra-ui/react'
 import Technologies from './Technologies';
 import { SectionDivider } from '../Styles/GlobalStyles';
@@ -95,108 +95,107 @@ const ButtonContainer = styled.div`
 
 `
 
-const Homepage = () => {	
-    return (
-        <GridContainer>
-         <ParticleComponent />
-          <Layout >
-			{/* <Intro /> */}
+const Homepage = () => {
+	return (
+		<GridContainer>
+			<ParticleComponent />
+			<Layout >
 
-			<Suspense fallback={null}>
-				<Totoro />
-			</Suspense>
+				<Suspense fallback={null}>
+					<Totoro />
+				</Suspense>
 
-			<Container className="homePageContainer" >
-				<Section delay={0.1}>
-					<HeadingContainer>
-						<h1>Bio</h1> 
-						<SectionDivider />
-					</HeadingContainer>
-					<h1>
-						Jeremy is a react developer who specializes in the MERN/PERN stack. He enjoys developing frontend user interfaces that prioritize sleek design, integrate background animations, and consume APIs to display interactive information. 
-						As a blockchain engineer, he enjoys connecting frontend web applications with the blockchain via Web3js. 
-					</h1>
-				</Section>
+				<Container className="homePageContainer" >
+					<Section delay={0.1}>
+						<HeadingContainer>
+							<Intro />
+							<SectionDivider />
+						</HeadingContainer>
+						<h1>
+							Tristan is a react developer who specializes in the MERN/PERN stack. He enjoys developing frontend user interfaces that prioritize sleek design, integrate background animations, and consume APIs to display interactive information.
+							As a blockchain engineer, he enjoys connecting frontend web applications with the blockchain via Web3js.
+						</h1>
+					</Section>
 
-				<Section delay={0.2}>	
-					<Box align="center" my={4}>
-						<Link href="/works">
-							<ButtonContainer>
-								<h1>My Portfolio</h1>
-							</ButtonContainer>
-						</Link>
-					</Box>
-				</Section>
+					<Section delay={0.2}>
+						<Box align="center" my={4}>
+							<Link href="/works">
+								<ButtonContainer>
+									<h1>My Portfolio</h1>
+								</ButtonContainer>
+							</Link>
+						</Box>
+					</Section>
 
-				<Section delay={0.3}>
-					<Heading as="h3" variant="section-title">
-						I ❤ 
-					</Heading>
-					<h1>Programming, 
-					<Link 
-						style={{color: "#00ccff", textDecoration: "none"}}
-						href="https://www.youtube.com/watch?v=J_eNHNsUKPA"
-					> Youtube, </Link>
-					3D Rendering, Drums, Guitar {' '}
-					<Link 
-						style={{color: "#42fad0", textDecoration: "none"}}
-						href="https://darkmeowfi.netlify.app/"
-					>Lofi, </Link> Rock Climbing, Parkour, 
-					<Link 
-						style={{color: "crimson", textDecoration: "none"}}
-						href="https://beacons.ai/darkskittlz"
-					> Cosplay, </Link>
-					Skateboarding, 
-					</h1>
-				</Section>
+					<Section delay={0.3}>
+						<Heading as="h3" variant="section-title">
+							I ❤
+						</Heading>
+						<h1>Programming,
+							<Link
+								style={{ color: "#00ccff", textDecoration: "none" }}
+								href="https://www.youtube.com/watch?v=J_eNHNsUKPA"
+							> Youtube, </Link>
+							3D Rendering, Drums, Guitar {' '}
+							<Link
+								style={{ color: "#42fad0", textDecoration: "none" }}
+								href="https://darkmeowfi.netlify.app/"
+							>Lofi, </Link> Rock Climbing, Parkour,
+							<Link
+								style={{ color: "crimson", textDecoration: "none" }}
+								href="https://beacons.ai/darkskittlz"
+							> Cosplay, </Link>
+							Skateboarding,
+						</h1>
+					</Section>
 
-				<br />
-				
-				<Section delay={0.4}>
-					<Heading as="h2" variant="section-title">
-						Portofolio Inspiration
-					</Heading>
-					<h1>{' '}
-						<Link 
-							href="https://www.craftz.dog/" 
-							style={{
-								textDecoration: "none", 
-								color: "green"
-							}}>Takuyama Matsuyama </Link>
-					</h1>
 					<br />
-					<Heading as="h2" variant="section-title">
-						3D Model Totoro 
-					</Heading>
-					<h1>{' '}
-						<Link 
-							href="https://www.cgtrader.com/jkielr" 
-							style={{
-								textDecoration: "none", 
-								color: "#ff00d5"
-							}}>Jesse Ragos</Link>
-					</h1>
-				</Section>
 
-				<Section delay={0.5}>	
-					<Technologies />
-				</Section>
+					<Section delay={0.4}>
+						<Heading as="h2" variant="section-title">
+							Portofolio Inspiration
+						</Heading>
+						<h1>{' '}
+							<Link
+								href="https://www.craftz.dog/"
+								style={{
+									textDecoration: "none",
+									color: "green"
+								}}>Takuyama Matsuyama </Link>
+						</h1>
+						<br />
+						<Heading as="h2" variant="section-title">
+							3D Model Totoro
+						</Heading>
+						<h1>{' '}
+							<Link
+								href="https://www.cgtrader.com/jkielr"
+								style={{
+									textDecoration: "none",
+									color: "#ff00d5"
+								}}>Jesse Ragos</Link>
+						</h1>
+					</Section>
 
-				<Section delay={0.6}>	
-					<Timeline />
-				</Section>
+					<Section delay={0.5}>
+						<Technologies />
+					</Section>
 
-				<Section delay={0.7}>	
-					<ChakraModal />
-				</Section>
-				
-			</Container>
-		</Layout>
-		<FooterContainer>
-        	<Footer />
-        </FooterContainer>
-        </GridContainer>
-    );
+					<Section delay={0.6}>
+						<Timeline />
+					</Section>
+
+					<Section delay={0.7}>
+						<ChakraModal />
+					</Section>
+
+				</Container>
+			</Layout>
+			<FooterContainer>
+				<Footer />
+			</FooterContainer>
+		</GridContainer>
+	);
 };
 
 export default Homepage;
