@@ -47,7 +47,7 @@ nav a {
 
 .navbarItems {
   display: flex;
-  
+
   @media screen (max-width: 960px) {
     display: none;
   }
@@ -55,7 +55,7 @@ nav a {
 
 .LinkItems {
   display: flex;
-  
+
   @media screen (max-width: 900px) {
     display: none;
   }
@@ -65,7 +65,7 @@ nav a {
   display: flex;
   backdrop-filter: blur(20px);
   justify-content: center;
-  border-radius: 10px; 
+  border-radius: 10px;
   flex-direction: column;
   width: 100%;
 
@@ -78,7 +78,7 @@ nav a {
 .Layout {
   position: relative;
   width: 100%;
-  
+
   @media screen (max-width: 960px) {
     display: flex;
   }
@@ -103,14 +103,6 @@ nav a {
 
   @media screen (max-width: 960px) {
     flex-direction: column;
-  }
-}
-
-.IntroContainer {
-
-  @media screen (max-width: 900px) {
-    margin-left: 20%;
-    height: 200px;
   }
 }
 

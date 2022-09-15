@@ -67,33 +67,30 @@ const HeadingContainer = styled.div`
 	}
 `
 
-const ButtonContainer = styled.div`
-	font-size: 34px;
-	width: 300px;
-	border-radius: 10px;
-	margin-top: 40px;
-	margin-bottom: 40px;
-	padding: 40px;
-	text-decoration: inherit;
-	color: var(--text-color);
-	animation-name: ${Animation};
-	animation-duration: 4s;
-	animation-iteration-count: infinite;
-	background: rgb(14,252,43);
-	background: linear-gradient(34deg, rgba(14,252,43,0.4013664983933972) 15%, rgba(9,222,238,0.29767441860465116) 48%, rgba(156,47,191,0.29767441860465116) 83%);
 
-	@media (max-width: 960px) {
-		width: 250px;
-	}
+export const PortfolioContainer = styled.div`
+	width: 200px;
+	margin-top: 10px;
+	padding: 40px;
+	border-radius: 10px;
+	color: var(--text-color);
+	box-shadow: 0 0 10px #09EE9A;
+	backdrop-filter: blur(100px);
+	background: rgb(15,207,188);
+	background: linear-gradient(28deg, rgba(15,207,188,1) 0%, rgba(233,89,207,1) 100%);
 
 	h1 {
-		@media (max-width: 960px) {
-			font-size: 25px;
-			padding: 0px;
-		}
+		font-size: 20px;
 	}
 
+	@media screen (max-width: 900px) {
+	  margin-left: 20%;
+	  height: 200px;
+	}
 `
+
+
+
 
 const Homepage = () => {
 	return (
@@ -105,10 +102,14 @@ const Homepage = () => {
 					<Totoro />
 				</Suspense>
 
+
+				<Section delay={0.1}>
+					<Intro />
+				</Section>
+
 				<Container className="homePageContainer" >
-					<Section delay={0.1}>
+					<Section delay={0.2}>
 						<HeadingContainer>
-							<Intro />
 							<SectionDivider />
 						</HeadingContainer>
 						<h1>
@@ -117,15 +118,6 @@ const Homepage = () => {
 						</h1>
 					</Section>
 
-					<Section delay={0.2}>
-						<Box align="center" my={4}>
-							<Link href="/works">
-								<ButtonContainer>
-									<h1>My Portfolio</h1>
-								</ButtonContainer>
-							</Link>
-						</Box>
-					</Section>
 
 					<Section delay={0.3}>
 						<Heading as="h3" variant="section-title">
@@ -182,10 +174,19 @@ const Homepage = () => {
 					</Section>
 
 					<Section delay={0.6}>
+						<Box align="center" my={4}>
+							<Link href="/works" style={{ textDecoration: "none" }}>
+								<PortfolioContainer>
+									<h1>My Portfolio</h1>
+								</PortfolioContainer>
+							</Link>
+						</Box>
+					</Section>
+					<Section delay={0.7}>
 						<Timeline />
 					</Section>
 
-					<Section delay={0.7}>
+					<Section delay={0.8}>
 						<ChakraModal />
 					</Section>
 
