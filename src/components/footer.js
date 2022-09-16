@@ -140,7 +140,7 @@ function Footer() {
             <SocialIcons href="https://github.com/Darkskittlz">
                 <AiFillGithub size="3rem" />
             </SocialIcons>
-            <SocialIcons href="https://linkedin.com/Jeremydev">
+            <SocialIcons href="www.linkedin.com/in/Darkskittles">
                 <AiFillLinkedin size="3rem" />
             </SocialIcons>
             <SocialIcons href="https://twitter.com/Darkskiiittlz">
