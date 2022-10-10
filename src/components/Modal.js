@@ -19,10 +19,7 @@ import axios from 'axios'
 import date from 'date-and-time';
 import Clock from 'react-live-clock';
 import { emotions } from '../constants/constants'
-import ParticleComponent from '../ParticleBackground2'
-import WaveBackground from './WaveBackground'
 import Totoro from './threeJS/Totoro'
-import { Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -138,7 +135,6 @@ const InputContainer = styled.div`
 `
 
 const MessageContainer = styled.div`
-  
 
   input {
     padding-top: 10px;
@@ -224,9 +220,9 @@ export default function ChakraModal() {
               >
                 <form ref={form} id="myForm" onSubmit={(event) => handleSubmit(event)}>
                   
-                  <IMGContainer>
-                    <img src="https://i.gifer.com/XDZT.gif" alt="in development" />
-                  </IMGContainer>
+                <IMGContainer>
+					        <img src="https://i.gifer.com/2qQQ.gif" alt="animeGif"/>
+				        </IMGContainer>
 
                   <ModalBody 
                     css={{

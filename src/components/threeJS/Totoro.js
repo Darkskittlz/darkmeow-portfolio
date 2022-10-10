@@ -78,7 +78,6 @@ export default function Totoro() {
           </Suspense>
           <OrbitControls />
       </Canvas>
-
     </GridContainer>
   )
 }
