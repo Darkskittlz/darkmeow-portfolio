@@ -1,0 +1,17 @@
+[build]
+    command = 'CI= npm run build'
+    functions = 'netlify/functions'
+    publish = 'build'
+
+[functions]
+directory = "/netlify/functions/" 
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/OnDemand"
+  to = "/OnDemand"
+  status = 200
