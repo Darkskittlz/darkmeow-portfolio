@@ -7,21 +7,16 @@
 directory = "/netlify/functions/" 
 
 [[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
-
-[[redirects]]
-  from = "https://darkmeowproductions.com/works"
+  from = "/works"
   to = "/works"
   status = 200
 
 [[redirects]]
-  from = "https://darkmeowproductions.com/posts"
+  from = "/posts"
   to = "/posts"
   status = 200
 
 [[redirects]]
-  from = "https://darkmeowproductions.com/tutorials"
+  from = "/tutorials"
   to = "/tutorials"
   status = 200
