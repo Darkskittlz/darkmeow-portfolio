@@ -12,16 +12,16 @@ directory = "/netlify/functions/"
   status = 200
 
 [[redirects]]
-  from = "/works"
-  to = "https://darkmeowproductions.com/works"
+  from = "https://darkmeowproductions.com/works"
+  to = "/works"
   status = 200
 
 [[redirects]]
-  from = "/posts"
-  to = "https://www.darkmeowproductions.com/posts"
+  from = "https://darkmeowproductions.com/posts"
+  to = "/posts"
   status = 200
 
 [[redirects]]
-  from = "tutorials"
-  to = "https://www.darkmeowproductions.com/tutorials"
+  from = "https://darkmeowproductions.com/tutorials"
+  to = "/tutorials"
   status = 200
