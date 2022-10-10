@@ -22,6 +22,7 @@ import { emotions } from '../constants/constants'
 import ParticleComponent from '../ParticleBackground2'
 import WaveBackground from './WaveBackground'
 import Totoro from './threeJS/Totoro'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -327,6 +328,9 @@ export default function ChakraModal() {
                       id="btn"
                       value="send"
                       type="submit"
+                      onClick={() => {
+                        alert("Message Sent. Please Check your inbox")
+                      }}
                       > Send </Button>
                     <Button className="modalButton" onClick={onClose}>
                       Close
