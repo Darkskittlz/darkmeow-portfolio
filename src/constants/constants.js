@@ -75,7 +75,7 @@ export const TimeLineData = [
 
   
   export const emotions = [
-    { id: '1', title: 'Happy 🙂 ', },
+    { id: '1', title: 'Happy 🙂', },
     { id: '2', title: 'Sad 😞 ', },
     { id: '3', title: 'Inspired 😅 ', },
     { id: '4', title: 'Tired 😫 ', },

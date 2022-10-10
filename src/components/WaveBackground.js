@@ -4,7 +4,13 @@ import { Canvas, extend, useFrame, useLoader, useThree } from 'react-three-fiber
 import * as THREE from 'three';
 import circleImg from '../assets/images/YinYang2.png';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import styled from 'styled-components';
 extend({ OrbitControls })
+
+const AnimContainer = styled.div`
+    display: flex;
+    z-index: 999;
+`
 
 
 function CameraControls() {
@@ -122,11 +128,11 @@ function AnimationCanvas() {
 const WaveBackground = () => {
     return (
         <>
-            <div className="anim">
+            <AnimContainer>
                 <Suspense fallback={<div>Loading...</div>}>
                     <AnimationCanvas />
                 </Suspense>
-            </div>
+            </AnimContainer>
         </>
     );
 };

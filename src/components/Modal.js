@@ -5,7 +5,6 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
   ModalFooter,
   ModalBody,
   ModalCloseButton,
@@ -14,9 +13,16 @@ import {
   FormControl,
   FormErrorMessage,
   FormLabel,
-  Input,
-  FormHelperText,
+  Select
 } from '@chakra-ui/react'
+import axios from 'axios'
+import date from 'date-and-time';
+import Clock from 'react-live-clock';
+import { emotions } from '../constants/constants'
+import ParticleComponent from '../ParticleBackground2'
+import WaveBackground from './WaveBackground'
+import Totoro from './threeJS/Totoro'
+
 
 
 
@@ -25,7 +31,7 @@ const GridContainer = styled.div`
   width: 100%;
   position: relative;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   align-items: center;
 `
 
@@ -49,7 +55,7 @@ const ModalContainer = styled.div`
 
 
 const Header = styled.h1`
-  font-size: 29px;
+  font-size: 22px;
   margin-bottom: 20px;
   text-align: center;
   color: var(--text-color);
@@ -57,17 +63,6 @@ const Header = styled.h1`
   @media screen and (max-width: 960px) {
     font-size: 20px;
     text-align: left;
-  }
-`
-
-const Header2 = styled.h1`
-  font-size: 19px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: var(--text-color);
-
-  @media screen and (max-width: 960px) {
-
   }
 `
 
@@ -82,11 +77,39 @@ const CloseContainer = styled.div`
   }
 `
 
+const TimeContainer = styled.div`
+    font-size: 22px;
+    font-weight: 400;
+    display: flex;
+    grid-gap: 10px;
+
+    h1 {
+        font-size: 25px;
+        color: white;
+        font-weight: 600;
+    }
+`
+
+const DateContainer = styled.div`
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    grid-gap: 10px;
+    margin-bottom: -25px;
+
+    h1 {
+        font-size: 23px;
+        font-weight: 600;
+        color: white;
+    }
+`
+
+
 const IMGContainer = styled.div`
   width: 100%;
   justify-content: center;
   display: flex;
-  margin-bottom: 10px;
+
 
   img {
     border-radius: 10px;
@@ -97,30 +120,68 @@ const IMGContainer = styled.div`
   }
 `
 
+const DropdownContainer = styled.div`
+  margin-bottom: 10px;
+`
+
+const InputContainer = styled.div`
+  input {
+    font-size: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    backdrop-filter: blur(10px);
+    background-color: none;
+  }
+`
+
+const MessageContainer = styled.div`
+  
+
+  input {
+    padding-top: 10px;
+    padding-bottom: 60px;    
+  }
+`
+
+
+
 export default function ChakraModal() {
   const form = useRef();
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const [message, setMessage] = useState(null)
+  const [mood, setMood] = useState(null)
   const [email, setEmail] = useState(null)
-  const [input, setInput] = useState('')
-
-  const handleInputChange = (e) => setInput(e.target.value)
-
-  const isError = input === ''
-
-  // const sendData2 = async () => {
-  //   const formattedName = encodeURIComponent(name)
-  //   const formattedEmail = encodeURIComponent(email)
+  const [name, setName] = useState(null)
 
 
-  //   const URL = `name=${formattedName}&genre=${formattedGenre}&email=${formattedEmail}&src=${formattedSrc}`;
-  //   const results = await axios.get"/.vercel/functions/email/?" + URL);
-  //   console.log(results);
-  // }
+  const sendData = async () => {
+    const formattedName = encodeURIComponent(name)
+    const formattedMood = encodeURIComponent(mood)
+    const formattedEmail = encodeURIComponent(email)
+    const formattedMessage = encodeURIComponent(message)
+
+
+    const URL = `name=${formattedName}&mood=${formattedMood}&email=${formattedEmail}&message=${formattedMessage}`;
+    const results = await axios.post("/.netlify/functions/sendData/?" + URL);
+    console.log(results);
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // sendData2();
+    sendData()
   }
+
+  console.log(`mood: `, mood);
+  console.log(`Email: `, email);
+  console.log(`Name: `, name);
+  console.log(`Message: `, message);
+
+
+  const now = new Date();
+  date.format(now, 'MMM DD YYYY');
+
 
 
   return (
@@ -152,13 +213,6 @@ export default function ChakraModal() {
           <ModalContainer>
             <ModalOverlay>
               <ModalContent 
-                // w="40%"
-                // h="65%"
-                // ml="30%"
-                // mt="8%"
-                // p="10px"
-                // pl="120px"
-                // pr="120px"
                 css={{
                   display: "flex",
                   justifyContent: "center",  
@@ -167,63 +221,118 @@ export default function ChakraModal() {
                   backdropFilter: "blur(50px)"
                 }}
               >
-                <CloseContainer>
-                  <ModalCloseButton />
-                </CloseContainer>
                 <form ref={form} id="myForm" onSubmit={(event) => handleSubmit(event)}>
-                <Header>Contact Me</Header>
+                  
+                  <IMGContainer>
+                    <img src="https://i.gifer.com/XDZT.gif" alt="in development" />
+                  </IMGContainer>
+
                   <ModalBody 
-                    css={{display: "Flex", justifyContent: "center"}}
+                    css={{
+                      display: "flex", 
+                      justifyContent: "center",
+                      gridGap: "50px",
+                      marginBottom: "5px"
+                    }}>
+                      <TimeContainer>
+                          <h1>Time: </h1><Clock format={'h:mm a'} ticking={true} id="time"/>
+                      </TimeContainer>
+                  </ModalBody>
+                  <ModalBody 
+                    css={{
+                      display: "flex", 
+                      justifyContent: "center",
+                      gridGap: "50px",
+                      marginBottom: "30px"
+                    }}>
+                      <DateContainer>
+                          <h1>Date: </h1> {date.format(now, 'ddd, MMM DD YYYY')}
+                      </DateContainer>
+                  </ModalBody>
+
+
+
+                  
+                  <ModalBody 
+                    css={{
+                      display: "Flex", 
+                      justifyContent: "center",
+                    }}
                     pb={6}
-                    >
+                  >
                     <FormControl>
                     <FormLabel 
                       css={{
-                        fontSize: "40px",
-                        textAlign: "center"
+                        fontSize: "25px",
+                        textAlign: "center",
+                        marginBottom: "10px"
                       }}
-                      >Email address</FormLabel>
-                      <Input 
-                        value={input}
-                        type='email'
-                        onChange={(event) => {
-                          handleInputChange()
-                          // setEmail(event.target.value)
-                        }}
-                        css={{
-                          fontSize: "30px",
-                          width: "100%",
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
+                      >Contact Form</FormLabel>
+                      <InputContainer>
+                        <DropdownContainer>
+                          <Select
+                            placeholder="Select Mood"
+                            css={{width: "100%", padding: "10px"}}
+                            onChangeCapture={(event) => setMood(event.target.value)}
+                          > 
+                            {emotions.map(({ id, title }) => {
+                              return <option
+                                key={id}
+                                id="mood"
+                                value={title}
+                                name="user_mood"
+                                type="text"
+                              >
+                                {title} 
+                              </option>
+                            })}
+                          </Select>
+                        </DropdownContainer>
+                        <input 
+                          id="name"
+                          type="name"
+                          name="user_name"
+                          placeholder="Captain Jack"
+                          onChange={(event) => {
+                            setName(event.target.value)
+                          }}
                         />
-                      {!isError ? (
-                        <FormHelperText css={{fontSize: "18px"}}>
-                          Enter the email you'd like to receive our newsletter on
-                        </FormHelperText>
-                      ) : (
-                        <FormErrorMessage>Email is required.</FormErrorMessage>
-                        )}
+                        <input 
+                          id="email"
+                          type='email'
+                          name="user_email"
+                          placeholder="Parley@gmail.com"
+                          onChange={(event) => {
+                            setEmail(event.target.value)
+                          }}
+                        />
+                        <MessageContainer>
+                          <input
+                            type="message"
+                            id="message"
+                            placeholder="Message"
+                            name="user_message"
+                            onChange={(event) => setMessage(event.target.value)}
+                          />
+                        </MessageContainer>
+                      </InputContainer>
+                        
                     </FormControl>
                   </ModalBody>
+                  <ModalFooter
+                    css={{display: "flex", justifyContent: "center", }}
+                    >
+                    <Button 
+                      className="modalButton"
+                      id="btn"
+                      value="send"
+                      type="submit"
+                      > Send </Button>
+                    <Button className="modalButton" onClick={onClose}>
+                      Close
+                    </Button>
+                  </ModalFooter>
                 </form>
-                <ModalFooter
-                  css={{display: "flex", justifyContent: "center", }}
-                  >
-                  <Button 
-                    className="modalButton"
-                    id="btn"
-                    value="send"
-                    type="submit"
-                    > Send </Button>
-                  <Button className="modalButton" onClick={onClose}>
-                    Close
-                  </Button>
-                </ModalFooter>
-                <IMGContainer>
-                  <img src="https://media1.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="in development" />
-                </IMGContainer>
-                <Header2>Still In Development...</Header2>
               </ModalContent>
             </ModalOverlay>
           </ModalContainer>
