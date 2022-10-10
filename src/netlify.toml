@@ -13,15 +13,15 @@ directory = "/netlify/functions/"
 
 [[redirects]]
   from = "/works"
-  to = "/works"
+  to = "https://darkmeowproductions.com/works"
   status = 200
 
 [[redirects]]
   from = "/posts"
-  to = "/posts"
+  to = "https://www.darkmeowproductions.com/posts"
   status = 200
 
 [[redirects]]
-  from = "/tutorials"
-  to = "/tutorials"
+  from = "tutorials"
+  to = "https://www.darkmeowproductions.com/tutorials"
   status = 200
