@@ -33,6 +33,12 @@ const BodyContainer = styled.div`
         text-indent: 30px;
         text-align: left;
     }
+
+    a {
+        text-decoration: none;
+        color: blue;
+        font-size: 25px;
+    }
 `
 
 export const FooterContainer = styled.div`
@@ -68,7 +74,14 @@ const BlogPost2 = props => {
                                 <h1> 🌟  GraphQL <Badge colorScheme="blue"> 2022</Badge></h1> 
                             </TitleContainer>
                             <BodyContainer>
-                                Minim esse dolor eu consequat aute sit mollit cupidatat. Est incididunt aliqua nostrud deserunt aliquip. Aliquip consectetur enim dolore officia in esse tempor sunt proident commodo sunt dolor. Sit qui Lorem exercitation nisi commodo ad consectetur. Nostrud proident nisi fugiat Lorem proident laboris do ipsum.
+                                Fetching Data from GraphQL has been an interesting learning curve. 
+                                I would highly recommend starting with learning the Apollo/client and 
+                                instantiating your first client to wrap your root component in App.js.
+                                Linked below is the official site 
+                                <br />
+                                <br />
+                                <a href="https://www.apollographql.com/tutorials/">ApolloGraphQL\Tutorials</a>
+
                             </BodyContainer>
                         </SimpleGrid>
                         <FooterContainer>
