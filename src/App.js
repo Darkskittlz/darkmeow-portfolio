@@ -8,6 +8,8 @@ import Navbar from './components/navbar';
 import Works from './components/Works';
 import Posts from './components/Posts';
 import BlogPost from './components/posts/Blog1';
+import BlogPost2 from './components/posts/Blog2';
+import BlogPost3 from './components/posts/Blog3';
 import APMusic from './components/works/APMusic';
 import Backgrounds from './components/works/Backgrounds';
 import Bandingo from './components/works/Bandingo';
@@ -19,10 +21,10 @@ import MatiasSanes from './components/works/MatiasSanes';
 import ThreejsPortfolio from './components/works/ThreejsPortfolio'; 
 import Nhost from './components/works/Nhost'; 
 import SPAPortfolio from './components/works/SPAPortfolio'; 
-import BlogPost2 from './components/posts/Blog2';
 import Tutorials from './components/Tutorials';
 import ReactNhost from './components/tutorials/Youtube';
 import Youtube from './components/tutorials/Youtube';
+import Wednesday from './components/works/Wednesday';
 
 
 const NavContainer = styled.div`
@@ -59,9 +61,11 @@ const App = ({ Component, pageProps, router }) => {
                             <Route path='/Works/ThreejsPortfolio' element={<ThreejsPortfolio />} />                            
                             <Route path='/Works/Nhost' element={<Nhost />} />                            
                             <Route path='/Works/SPAPortfolio' element={<SPAPortfolio />} />                            
+                            <Route path='/Works/Wednesday' element={<Wednesday />} />                            
                             <Route path='/Posts' element={<Posts />} />                            
                             <Route path='/Posts/Blog1' element={<BlogPost />} />                            
                             <Route path='/Posts/Blog2' element={<BlogPost2 />} />    
+                            <Route path='/Posts/Blog3' element={<BlogPost3 />} />    
                             <Route path='/Tutorials' element={<Tutorials />} />                       
                             <Route path='/Tutorials/Youtube' element={<Youtube />} />                        
                       </Routes>                       

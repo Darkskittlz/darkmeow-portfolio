@@ -11,6 +11,7 @@ exports.handler = async function (event, context, callback) {
         const email = event.queryStringParameters.email
         const mood = event.queryStringParameters.mood
         const message = event.queryStringParameters.message
+        const email2 = "darkskiiittles@gmail.com"
 
         const payload = {
             to: `${name} <${email}>`,
@@ -22,11 +23,21 @@ exports.handler = async function (event, context, callback) {
             }
         }
 
+        const payload2 = {
+            to: `Tristan <${email2}>`,
+            dynamicTemplateData: {
+                greeting: `Hello Tristan. New Email from...`,
+                email: `${email}`,
+                mood: `${mood}`,
+                message: `${message}`
+            }
+        }
+
         await mail.send({
             from: 'DarkMeow Productions <noreply@darkmeowproductions.com>',
             replyTo: "noreply@darkmeowproductions.com",
             templateId: 'd-8da3e4888cde4a91844ea627de285e7b',
-            personalizations: [payload]
+            personalizations: [payload, payload2]
         });
 
         return {

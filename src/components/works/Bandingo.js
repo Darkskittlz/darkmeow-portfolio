@@ -134,6 +134,7 @@ const Bandingo = props => {
                                         <Badge2>Website</Badge2>
                                         <Link 
                                             href="https://www.playoriginalbandingo.com/"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}
@@ -146,6 +147,7 @@ const Bandingo = props => {
                                         <Badge2>Source</Badge2>
                                         <Link 
                                             href="https://github.com/hyperridetech/Bandingo-PWA"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}

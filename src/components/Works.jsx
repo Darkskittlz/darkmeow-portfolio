@@ -16,6 +16,7 @@ import {
     Box
 } from '@chakra-ui/react'
 
+import Wednesday from "../assets/images/works/Wednesday.png"
 import SPA from "../assets/images/works/SPA.png"
 import Breezeline from "../assets/images/works/breezeline.png"
 import { SectionDivider } from '../Styles/GlobalStyles'
@@ -90,14 +91,14 @@ const Works = props => {
                                     <Container className="projectContainer">
                                         <Image
                                             fit="cover"
-                                            src={Breezeline}
-                                            alt="NHost Project"	
+                                            src={Wednesday}
+                                            alt="AliceMeowz Project"	
                                             className="projectThumbnail"
                                             placeholder="blur"
                                             loading="lazy"
                                         />
                                     </Container>
-                                    <LinkOverlay href={`works/Nhost`}>
+                                    <LinkOverlay href={`works/Wednesday`}>
                                         <Text 
                                             style={{
                                                 color: "var(--text-color)",
@@ -106,7 +107,7 @@ const Works = props => {
                                                 marginTop: "10px"
                                             }}
                                             fontSize={20}
-                                        >NHost & GraphQL</Text>
+                                        >Wednesday</Text>
                                     </LinkOverlay>
                                 </LinkBox>
                             </Section>

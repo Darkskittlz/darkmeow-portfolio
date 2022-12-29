@@ -144,6 +144,7 @@ const ECommerce = props => {
                                         <Badge2>Website</Badge2>
                                         <Link 
                                             href="https://demonslayer-ecommerce.netlify.app/"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}
@@ -156,6 +157,7 @@ const ECommerce = props => {
                                         <Badge2>Source</Badge2>
                                         <Link 
                                             href="https://github.com/Darkskittlz/darkCommerce"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}

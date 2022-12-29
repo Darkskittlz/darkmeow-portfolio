@@ -136,6 +136,7 @@ const MatiasSanes = props => {
                                         <Badge2>Website</Badge2>
                                         <Link 
                                             href="https://matias-sanes.netlify.app/"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}
@@ -148,6 +149,7 @@ const MatiasSanes = props => {
                                         <Badge2>Source</Badge2>
                                         <Link 
                                             href="https://github.com/Darkskittlz/matiasSite"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}

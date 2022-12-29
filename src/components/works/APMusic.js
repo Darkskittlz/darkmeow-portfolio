@@ -136,6 +136,7 @@ const APMusic = props => {
                                         <Badge2>Website</Badge2>
                                         <Link 
                                             href="https://aidanpaulmusic.netlify.app/"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}
@@ -148,6 +149,7 @@ const APMusic = props => {
                                         <Badge2>Source</Badge2>
                                         <Link 
                                             href="https://github.com/Darkskittlz/Aidan-Website"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}

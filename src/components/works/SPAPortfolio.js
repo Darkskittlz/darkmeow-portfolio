@@ -137,6 +137,7 @@ const Backgrounds = props => {
                                         <Badge2>Website</Badge2>
                                         <Link 
                                             href="https://darkmeowproductions.netlify.app/"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}
@@ -149,6 +150,7 @@ const Backgrounds = props => {
                                         <Badge2>Source</Badge2>
                                         <Link 
                                             href="https://github.com/Darkskittlz/darkPortfolio"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}

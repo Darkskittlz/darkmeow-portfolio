@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react'
 import Footer from './footer';
 import { SectionDivider } from '../Styles/GlobalStyles';
-
+import wave from "../assets/images/wave.jpeg"
 
 
 const FooterContainer = styled.div`
@@ -44,6 +44,11 @@ const GridContainer = styled.div`
 
 const Grid2Container = styled.div`
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
 
     @media screen and (max-width: 960px) {
         width: 5%;
@@ -53,6 +58,7 @@ const Grid2Container = styled.div`
 
 const BlogImage = styled.img`
     width: 440px;
+    height: 500px;
     border-radius: 10px;
 
     @media screen and (max-width: 960px) {
@@ -61,9 +67,17 @@ const BlogImage = styled.img`
     }
 `
 
-const Gap = styled.div`
-    padding: 5px;
+const BlogImage2 = styled.img`
+    width: 440px;
+    border-radius: 10px;
+
+    @media screen and (max-width: 960px) {
+        width: 290px;
+        margin-left: 5%;
+    }
 `
+
+
 
 
 
@@ -81,35 +95,36 @@ const Posts = props => {
                         </Center>
                     </Flex>
                     <Grid2Container>
-                        <Flex>
-                            <Center w="100%">
-                                <Box>
-                                    <Section delay={0.2}>
-                                        <LinkBox cursor='pointer'>
-                                            <BlogImage src="/images/postThumb.jpg" alt="Backgrounds Project" />
-                                            <LinkOverlay href={`posts/blog1`}>
-                                                <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>From E-Boy To Engineer</Text>
-                                            </LinkOverlay>
-                                        </LinkBox>
-                                    </Section>
-                                </Box>
-                            </Center>
-                        </Flex>
-                        <Gap />
-                        <Flex>
-                            <Center w="100%">
-                                <Box>
-                                    <Section delay={0.3}>
-                                        <LinkBox cursor='pointer'>
-                                            <BlogImage src="/images/proPic2.jpg" alt="Profile IMG" />
-                                            <LinkOverlay href={`posts/blog2`}>
-                                                <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>GraphQL </Text>
-                                            </LinkOverlay>
-                                        </LinkBox>                                   
-                                    </Section>
-                                </Box>                        
-                            </Center>
-                        </Flex>
+                        <Box>
+                            <Section delay={0.2}>
+                                <LinkBox cursor='pointer'>
+                                    <BlogImage src={wave} alt="Tide Of Tech Blog" />
+                                    <LinkOverlay href={`posts/blog3`}>
+                                        <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>The Tide of Tech</Text>
+                                    </LinkOverlay>
+                                </LinkBox>
+                            </Section>
+                        </Box>
+                        <Box>
+                            <Section delay={0.2}>
+                                <LinkBox cursor='pointer'>
+                                    <BlogImage src="/images/postThumb.jpg" alt="E-Boy to Engineer Blog" />
+                                    <LinkOverlay href={`posts/blog1`}>
+                                        <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>From E-Boy To Engineer</Text>
+                                    </LinkOverlay>
+                                </LinkBox>
+                            </Section>
+                        </Box>
+                            <Box>
+                                <Section delay={0.3}>
+                                    <LinkBox cursor='pointer'>
+                                        <BlogImage2 src="/images/proPic2.jpg" alt="GraphQL blog" />
+                                        <LinkOverlay href={`posts/blog2`}>
+                                            <Text style={{color: "var(--text-color)", textAlign: "center"}} fontSize={20}>GraphQL </Text>
+                                        </LinkOverlay>
+                                    </LinkBox>                                   
+                                </Section>
+                            </Box>                        
                     </Grid2Container>
                 <FooterContainer>
                     <Footer />

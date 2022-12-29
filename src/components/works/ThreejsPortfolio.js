@@ -139,6 +139,7 @@ const ThreejsPortfolio = props => {
                                         <Badge2>Website</Badge2>
                                         <Link 
                                             href="https://threejs-portfolio-site.netlify.app/"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}
@@ -151,6 +152,7 @@ const ThreejsPortfolio = props => {
                                         <Badge2>Source</Badge2>
                                         <Link 
                                             href="https://github.com/Darkskittlz/ThreeJS-Portfolio"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}

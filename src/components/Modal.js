@@ -79,7 +79,9 @@ const TimeContainer = styled.div`
     font-size: 22px;
     font-weight: 400;
     display: flex;
+    margin-top: 5px;
     grid-gap: 10px;
+    align-items: flex-end;
 
     h1 {
         font-size: 25px;
@@ -92,6 +94,7 @@ const DateContainer = styled.div`
     font-size: 20px;
     font-weight: 400;
     display: flex;
+    align-items: center;
     grid-gap: 10px;
     margin-bottom: -25px;
 
@@ -273,7 +276,7 @@ export default function ChakraModal() {
                             onChangeCapture={(event) => setMood(event.target.value)}
                           > 
                             {emotions.map(({ id, title }) => {
-                              return <option
+                            return <option
                                 key={id}
                                 id="mood"
                                 value={title}
@@ -289,7 +292,7 @@ export default function ChakraModal() {
                           id="name"
                           type="name"
                           name="user_name"
-                          placeholder="Captain Jack"
+                          placeholder="Name"
                           onChange={(event) => {
                             setName(event.target.value)
                           }}
@@ -298,7 +301,7 @@ export default function ChakraModal() {
                           id="email"
                           type='email'
                           name="user_email"
-                          placeholder="Parley@gmail.com"
+                          placeholder="E-Mail"
                           onChange={(event) => {
                             setEmail(event.target.value)
                           }}

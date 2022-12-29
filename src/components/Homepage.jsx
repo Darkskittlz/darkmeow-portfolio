@@ -182,6 +182,7 @@ const Homepage = () => {
 							</Link>
 						</Box>
 					</Section>
+					
 					<Section delay={0.7}>
 						<Timeline />
 					</Section>

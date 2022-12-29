@@ -130,6 +130,7 @@ const DarkMeowFi = props => {
                                         <Badge2>Website</Badge2>
                                         <Link 
                                             href="https://darkmeowfi.netlify.app/"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}
@@ -142,6 +143,7 @@ const DarkMeowFi = props => {
                                         <Badge2>Source</Badge2>
                                         <Link 
                                             href="https://github.com/Darkskittlz/darklofi"
+                                            target="_blank"
                                             style={{
                                                 color: "#b900ff"
                                             }}
