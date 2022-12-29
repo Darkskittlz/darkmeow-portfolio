@@ -26,8 +26,7 @@ exports.handler = async function (event, context, callback) {
         const payload2 = {
             to: `Tristan <${email2}>`,
             dynamicTemplateData: {
-                greeting: `Hello Tristan. New Email from...`,
-                email: `${email}`,
+                greeting: `Hello Tristan. New Email from ${email}`,
                 mood: `${mood}`,
                 message: `${message}`
             }
